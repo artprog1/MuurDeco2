@@ -10,7 +10,7 @@
   		}
   	}
  ?>
-
+<!-- ejemplo2 -->
 <!-- Establecemos el header como HTML -->
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
