@@ -13,12 +13,12 @@ if (isset($_POST['update'])) {
   $UserName = $_POST['name'];
   $UserMaterno = $_POST['materno'];
   $UserPaterno = $_POST['paterno'];
-  $UserEmail = $_POST['correo'];
-  $UserUID = $_POST['uid'];
+  //$UserEmail = $_POST['correo'];
+  //$UserUID = $_POST['uid'];
   $UserPerfil = $_POST['perfil'];
 
-  $query = " UPDATE users SET usersPrimerNombre = '".$UserName."', usersApellidoMaterno = '".$UserMaterno."', usersApellidoPaterno = '".$UserPaterno."', usersEmail = '".$UserEmail."', usersUid = '".$UserUID."', perfil = '".$UserPerfil."' where usersId='".$UserID."';";
-  $result = mysqli_query($conn,$query);
+  $query = " UPDATE users SET usersPrimerNombre = '".$UserName."', usersApellidoMaterno = '".$UserMaterno."', usersApellidoPaterno = '".$UserPaterno."', perfil = '".$UserPerfil."' where usersId='".$UserID."';";
+  $result = mysqli_query($conn,$query);  // ', usersUid = '".$UserUID." ', usersEmail = '".$UserEmail."
 
 
 
@@ -27,7 +27,7 @@ if (isset($_POST['update'])) {
     header("location: ../signup.php?msg=updatedone");
   }
   else {
-echo $UserID . $UserName .  $UserMaterno .  $UserPaterno .  $UserEmail . $UserUID .  $UserPerfil;
+echo $UserID . $UserName .  $UserMaterno .  $UserPaterno .  $UserPerfil;  // $UserEmail . $UserUID .
     echo "Favor de checar los datos";
   }
 }

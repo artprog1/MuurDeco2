@@ -1,9 +1,21 @@
 body{
-  background: lightblue url("../img/muur.png") fixed center;
+  background:  url("../img/muur.png") fixed center; //lightblue
 }
 /* id = "name" es buscado con # */
 
+.index-intro {
 
+   position: fixed; /* Stay in place */
+   z-index: 1; /* Sit on top */
+   left: 150;
+   top: 320;
+   width: 490; /* Full width */
+   height: 260; /* Full height */
+/*    overflow: auto; /* Enable scroll if needed */ */
+   background-color:  rgb(0,0,0); /* Fallback color*/
+   background-color: rgba(0,0,0,0.3); /* Black w/ opacity */
+   padding-bottom: 100;
+}
 
 #titulo {
   color: #1B21CA;
@@ -27,7 +39,7 @@ p {
 .wrapper {
   text-align: center;
   /* border: 3px ; */
-  color: black;
+  color: white;
 
 }
 
@@ -105,7 +117,8 @@ li a:hover {
   max-width: 350px;
   margin: auto;
   border-radius: 5px;
-  background: #ffffd4;
+  background: white;
+  /* #ffffd4; */
   /* #f3f3f3; */
   padding: 20px;
 }
@@ -176,18 +189,18 @@ Style for pop up form
  }
 
  /* The Modal (background) */
- .modal {
-   display: none; /* Hidden by default */
+ .index-intro {
    position: fixed; /* Stay in place */
    z-index: 1; /* Sit on top */
-   left: 0;
-   top: 0;
-   width: 100%; /* Full width */
-   height: 100%; /* Full height */
-   overflow: auto; /* Enable scroll if needed */
+   left: 150;
+   top: 320;
+   width: 490; /* Full width */
+   height: 260; /* Full height */
+/*    overflow: auto; /* Enable scroll if needed */ */
    background-color:  rgb(0,0,0); /* Fallback color*/
-   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-   padding-top: 60px;
+   background-color: rgba(0,0,0,0.3); /* Black w/ opacity */
+   padding-bottom: 100;
+}
  }
 
 .loginform {

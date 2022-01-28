@@ -13,8 +13,8 @@ require_once 'dbh.inc.php';
       $UserName = $row['usersPrimerNombre'];
       $UserMaterno = $row['usersApellidoMaterno'];
       $UserPaterno = $row['usersApellidoPaterno'];
-      $UserEmail = $row['usersEmail'];
-      $UserUID = $row['usersUid'];
+    //  $UserEmail = $row['usersEmail'];
+    //  $UserUID = $row['usersUid'];
       $UserPerfil = $row['perfil'];
 
 
@@ -35,8 +35,8 @@ require_once 'dbh.inc.php';
             <input type="text" class="form-control mb-2" placeholder=" Nombre " name="name" value="<?php echo $UserName; ?>">
             <input type="text" class="form-control mb-2" placeholder=" Paterno " name="materno" value="<?php echo $UserMaterno; ?>">
             <input type="text" class="form-control mb-2" placeholder=" Materno " name="paterno" value="<?php echo $UserPaterno; ?>">
-            <input type="email" class="form-control mb-2" placeholder=" Correo " name="correo" value="<?php echo $UserEmail; ?>">
-            <input type="text" class="form-control mb-2" placeholder=" ID Usuario " name="uid" value="<?php echo $UserUID; ?>">
+            <!-- <input type="email" class="form-control mb-2" placeholder=" Correo " name="correo" value="<?php //echo $UserEmail; ?>"> -->
+            <!-- <input type="text" class="form-control mb-2" placeholder=" ID Usuario " name="uid" value="<?php //echo $UserUID; ?>"> -->
             <!-- <input type="text" class="form-control mb-2" placeholder=" Perfil " name="perfil" value="
             <?php
             // echo $UserPerfil;
