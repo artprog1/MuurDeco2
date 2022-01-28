@@ -1,8 +1,11 @@
 <?php
 session_start();
 
+//limitamos los chars
 $captcha_num = '123456789abcdefghijkmnpqrstuvwxyz';
+//genera el string de chars
 $captcha_num = substr(str_shuffle($captcha_num), 0, 6);
+//declaramos variable global del captcha
 $_SESSION["code"] = $captcha_num;
 
 

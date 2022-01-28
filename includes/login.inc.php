@@ -1,6 +1,20 @@
 <?php
 
+
+
+session_start();
+	print_r($_POST);
 if (isset($_POST["submit"])) {
+
+
+    if($_POST['captcha'] == $_SESSION['code']){
+      echo "Correct captcha";
+      header("location: ../login.php?error=correct");
+    }else{
+      header("location: ../login.php?error=wrongcaptcha");
+      exit();
+    }
+
 
   $email = $_POST["uid"];
   $username = $_POST["uid"];
