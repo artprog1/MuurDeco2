@@ -71,7 +71,7 @@
              <select name="perfil" placeholder="Area">
                <option value="Pendiente" >Seleccione Area</option>
                <option value="Ventas">Ventas</option>
-               <option value="Diseño">Diseño</option>
+               <option value="Diseño">Diseño </option>
                <option value="Producción">Producción</option>
                <option value="Dirección">Dirección</option>
                <option value="Administración">Administración</option>
@@ -158,7 +158,7 @@
          <table class="styled-table">
            <td>
              <tr>
-               <td>ID</td>
+               <td>IDs </td>
                <td>Nombre</td>
                <td>A. Paterno</td>
                <td>A. Materno</td>

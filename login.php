@@ -21,6 +21,9 @@
             if ($_GET["error"] == "emptyinput") {
                 echo "<p>Asegure de llenar todos los campos</p>";
             }
+            else if ($_GET["error"] == "wrongcaptcha") {
+                echo "<p>Captcha Incorrecto</p>";
+            }
             else if ($_GET["error"] == "wronglogin") {
                 echo "<p>Usuario no existe</p>";
             }
