@@ -5,16 +5,26 @@ body{
 
 .index-intro {
 
-   position: fixed; /* Stay in place */
+
    z-index: 1; /* Sit on top */
-   left: 150;
-   top: 320;
-   width: 490; /* Full width */
-   height: 260; /* Full height */
-/*    overflow: auto; /* Enable scroll if needed */ */
    background-color:  rgb(0,0,0); /* Fallback color*/
-   background-color: rgba(0,0,0,0.3); /* Black w/ opacity */
-   padding-bottom: 100;
+   background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
+   padding-bottom: 70;
+   width: 500px;
+   height: 350px;
+   position: absolute;
+   margin: auto;
+   left: 0;
+   right: 0;
+   top: 15%;
+   bottom: 0;
+
+}
+
+.index-intro-textbox {
+  width: 70%;
+  margin: auto;
+
 }
 
 #titulo {
@@ -192,7 +202,7 @@ Style for pop up form
    display: none; /* Hidden by default */
  }
  /* The Modal (background) */
- .index-intro {
+ /* .index-intro {
    position: fixed; /* Stay in place */
    z-index: 1; /* Sit on top */
    left: 0;
@@ -208,7 +218,7 @@ Style for pop up form
    background-color:  rgb(0,0,0); /* Fallback color*/
    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
    padding-bottom: 100;
-}
+} */
  }
 
 .loginform {

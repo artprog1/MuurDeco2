@@ -1,21 +1,24 @@
 <?php
   include_once 'header.php'
 
- ?>
 
+ ?>
 
 
 
       <section class="index-intro">
         <h2>Ingreso al Portal</h2>
         <form class="loginform" action="includes/login.inc.php" method="post">
+          <div class="index-intro-textbox">
+            <input type="text" name="uid" placeholder="Correo Electronico / ID Usuario...">
+            <input type="password" name="pwd" placeholder="Contraseña...">
+  <!-- Se inserta el captcha solicitado -->
+            <img src="generate.php" /><input placeholder="Captcha..." type="text" name="captcha" />
 
-          <input type="text" name="uid" placeholder="Correo Electronico / ID Usuario...">
-          <input type="password" name="pwd" placeholder="Contraseña...">
-<!-- Se inserta el captcha solicitado -->
-          <img src="generate.php" /><input placeholder="Captcha..." type="text" name="captcha" />
+            <button type="submit" name="submit">Ingresar</button>
+          </div>
 
-          <button type="submit" name="submit">Ingresar</button>
+
           <?php
           if (isset($_GET["error"])) {
             if ($_GET["error"] == "emptyinput") {
