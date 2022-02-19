@@ -10,11 +10,11 @@
  }
   ?>
 
-      <section class="index-intro">
+        <section class="landingpage">
 
-        <p>Muur Deco's Workshop</p>
-        <p>Diseñado para brindar la eficacia de los proyectos</p>
-      </section>
+          <p>Muur Deco's Workshop</p>
+          <p>Diseñado para brindar la eficacia de los proyectos</p>
+        </section>
 
       <section class="index-catagories">
         <h2>Departamentos</h2>

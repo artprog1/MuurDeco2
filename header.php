@@ -1,7 +1,7 @@
 <?php
 // Se inicia la session
   session_start();
-  print_r($_POST);
+  // print_r($_POST);
 
  ?>
 <!-- ejemplo2 -->
@@ -13,7 +13,7 @@
     <title>Muur Deco Shop</title>
 <!-- Incluimos el archivo de CSS a utilizar con un path completo -->
     <link rel="stylesheet" href="css/style.css" />
-    
+
   </head>
 <!-- Inicia el header de cada pagina -->
   <body>
