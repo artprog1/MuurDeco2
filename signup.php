@@ -7,132 +7,116 @@
     header("location: ../MuurDecoShop/login.php?error=noingresado");
     exit();
  }
-
 // Corremos el select para generar datos al iniciar pagiina
       $sql = "SELECT * FROM users;";
       $result = mysqli_query($conn, $sql);
-
  ?>
 
+<div class="entire-body-content">
+
+  <section class="BotonesIniciales">
+    <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Nuevo Registro</button>
+  </section>
+
+  <div id="id01" class="modal">
 
 
-<!-- Boton para agregar -->
-<section class="BotonesIniciales">
-  <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Nuevo Registro</button>
-</section>
+    <form class="modal-content animate" id="signupform" action="includes/signup.inc.php" method="post">
+      <!-- <div class="imgcontainer">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <img src="img/user.jpeg" alt="Avatar" class="avatar">
+      </div> -->
+      <div class="container-modal">
+        <section class="signup-form">
+
+          <div class="datosPrimero">
+            <div class="form-control input-box">
+             <label for="nombre">Nombre</label>
+             <input type="text" name="nombre" placeholder="Primer Nombre..." id="primernombre" />
+             <small>Error message</small>
+           </div>
+
+            <div class="form-control input-box">
+             <label for="paterno">Paterno</label>
+             <input type="text" name="paterno" placeholder="Apellido Paterno..." id="paterno" />
+             <small>Error message</small>
+           </div>
+
+            <br>
+
+            <div class="form-control input-box">
+            <label for="materno">Materno</label>
+            <input type="text" name="materno" placeholder="Apellido Materno..." id="materno" />
+            <small>Error message</small>
+          </div>
+          </div>
+
+          <div class="datosSegundo">
+            <div class="form-control">
+             <label for="email">Correo Electronico</label>
+             <input type="email" name="email" placeholder="Correo Electronico..." id="email" />
+             <br>
+             <small>Error message</small>
+           </div>
+           <div class="form-control input-box">
+             <label for="uid">ID de Usuario</label>
+             <input type="text" name="uid" placeholder="ID de Usuario.." id="idusuario" />
+             <small>Error message</small>
+           </div>
+           <div class="form-control input-box">
+             <label for="perfil">Area</label>
+             <select name="perfil" placeholder="Area">
+               <option value="Pendiente" >Seleccione Area</option>
+               <option value="Ventas">Ventas</option>
+               <option value="Diseño">Diseño </option>
+               <option value="Producción">Producción</option>
+               <option value="Dirección">Dirección</option>
+               <option value="Administración">Administración</option>
+             </select>
+           </div>
+
+          </div>
+
+          <div class="datosTercero">
+
+            <div class="form-control input-box">
+              <label for="pwd">Contraseña</label>
+              <input type="password" name="pwd" placeholder="Contraseña..." id="password" />
+              <small>Error message</small>
+            </div>
+
+            <div class="form-control input-box">
+              <label for="pwdrepetido">Confirmar</label>
+              <input type="password" name="pwdrepetido" placeholder="Confirmar Contraseña" id="password2" />
+              <small>Error message</small>
+            </div>
+
+
+
+          </div>
+
+
+
+
+
+
+              <div class="buttonContainer">
+                <button type="submit" name="submit">Submit</button>
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                <!-- <span class="psw">Forgot <a href="#">password?</a></span> -->
+              </div>
+            <!-- </form> -->
+  <!-- En base a los errores que se tengan, se van a retornar un mensaje para los usuarios -->
+        </section>
+      </div>
+
+    </form>
+  </div>
 
 
 
 <!-- MODAL TO ENTER Entries -->
- <div id="id01" class="modal">
-   <form class="modal-content animate" id="signupform" action="includes/signup.inc.php" method="post">
-     <div class="imgcontainer">
-       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-       <img src="img/user.jpeg" alt="Avatar" class="avatar">
-     </div>
-     <div class="container">
-       <section class="signup-form">
 
-         <hr>
-           <!-- <form action="includes/signup.inc.php" method="post" id="form"> -->
-
-             <!-- <label for="nombre">Nombre</label>
-             <input type="text" name="nombre" placeholder="Primer Nombre...">
-             <br> -->
-
-             <div class="form-control">
-        			<label for="nombre">Nombre</label>
-        			<input type="text" name="nombre" placeholder="Primer Nombre..." id="primernombre" />
-        			<small>Error message</small>
-        		</div>
-
-             <!-- <label for="paterno">Paterno</label>
-             <input type="text" name="paterno" placeholder="Apellido Paterno..."> -->
-
-             <div class="form-control">
-        			<label for="paterno">Paterno</label>
-        			<input type="text" name="paterno" placeholder="Apellido Paterno..." id="paterno" />
-        			<small>Error message</small>
-        		</div>
-
-             <br>
-             <!-- <label for="materno">Materno</label>
-             <input type="text" name="materno" placeholder="Apellido Materno..."> -->
-
-             <div class="form-control">
-             <label for="materno">Materno</label>
-             <input type="text" name="materno" placeholder="Apellido Materno..." id="materno" />
-             <small>Error message</small>
-           </div>
-
-
-             <!-- <label for="email">Correo Electronico</label>
-             <input type="email" name="email" placeholder="Correo Electronico..."> -->
-
-             <div class="form-control">
-         			<label for="email">Correo Electronico</label>
-         			<input type="email" name="email" placeholder="Correo Electronico..." id="email" />
-              <br>
-              <small>Error message</small>
-         		</div>
-
-
-             <!-- <br>
-             <label for="uid">ID de Usuario</label>
-             <input type="text" name="uid" placeholder="ID de Usuario...">
-             <br> -->
-
-             <div class="form-control">
-               <label for="uid">ID de Usuario</label>
-               <input type="text" name="uid" placeholder="ID de Usuario.." id="idusuario" />
-               <small>Error message</small>
-             </div>
-
-
-             <!-- <label for="pwd">Contraseña</label>
-             <input type="password" name="pwd" placeholder="Contraseña...">
-             <br>
-              -->
-             <div class="form-control">
-               <label for="pwd">Contraseña</label>
-               <input type="password" name="pwd" placeholder="Contraseña..." id="password" />
-               <small>Error message</small>
-             </div>
-
-             <!-- <label for="pwdrepetido">Confrmar</label>
-             <input type="password" name="pwdrepetido" placeholder="Confirmar Contraseña">
-             <br> -->
-
-             <div class="form-control">
-               <label for="pwdrepetido">Confirmar</label>
-               <input type="password" name="pwdrepetido" placeholder="Confirmar Contraseña" id="password2" />
-               <small>Error message</small>
-             </div>
-
-             <div class="form-control">
-               <label for="perfil">Area</label>
-               <select name="perfil" placeholder="Area">
-                 <option value="Pendiente" >Seleccione Area</option>
-                 <option value="Ventas">Ventas</option>
-                 <option value="Diseño">Diseño </option>
-                 <option value="Producción">Producción</option>
-                 <option value="Dirección">Dirección</option>
-                 <option value="Administración">Administración</option>
-               </select>
-             </div>
-
-             <button type="submit" name="submit">Submit</button>
-             <div class="container" style="background-color:#f1f1f1">
-               <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-               <!-- <span class="psw">Forgot <a href="#">password?</a></span> -->
-             </div>
-           <!-- </form> -->
- <!-- En base a los errores que se tengan, se van a retornar un mensaje para los usuarios -->
-       </section>
-     </div>
-
-   </form>
- </div>
 
 
 
@@ -150,6 +134,7 @@
 
 <script src="js/signupEmployee.js"></script>
 <!--  -->
+<!-- Regresamos todos los errores de parte del backend.  -->
  <div class="alert">
    <?php
    if (isset($_GET["error"])) {
@@ -190,8 +175,9 @@
    } ?>
  </div>
 
-  <h2>Personal Registrado</h2>
-  <div class="container">
+
+  <div class="container2">
+      <h2>Personal Registrado</h2>
     <div class="row">
       <div class="col-l m-auto">
         <div class="table table-bordered">
@@ -244,16 +230,12 @@
     </div>
 
   </div>
+  <!-- Boton para agregar -->
 
 
 
 
-  <body>
-
-
-      <!-- </section>  -->
-
-      </body>
+</div>
 
 <?php
   include_once 'footer.php'
