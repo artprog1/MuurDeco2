@@ -42,7 +42,7 @@
              <small>Error message</small>
            </div>
 
-            <br>
+            <!-- <br> -->
 
             <div class="form-control input-box">
             <label for="materno">Materno</label>
