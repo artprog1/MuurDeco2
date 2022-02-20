@@ -77,7 +77,7 @@ function checkInputs() {
 	}
 
 	if(password2Value === '') {
-		setErrorFor(password2, 'Confirmación de contraseña no puede estar en blanco');
+		setErrorFor(password2, 'No puede estar en blanco');
 	} else if(passwordValue !== password2Value) {
 		setErrorFor(password2, 'Contraseñas no coinciden');
 	} else{
