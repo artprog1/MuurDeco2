@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <title>Muur Deco Shop</title>
     <link rel="stylesheet" href="../style.css">
-  
+
     <!-- El resto del front end va aqui -->
   </head>
 

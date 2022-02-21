@@ -4,7 +4,7 @@
 
 // Verificamos la session
   if (!isset($_SESSION["useruid"])) {
-    header("location: ../MuurDecoShop/login.php?error=noingresado");
+    header("location: /MuurDecoShop2/login.php?error=noingresado");
     exit();
  }
 // Corremos el select para generar datos al iniciar pagiina

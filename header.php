@@ -12,7 +12,7 @@
     <meta charset="utf-8">
     <title>Muur Deco Shop</title>
 <!-- Incluimos el archivo de CSS a utilizar con un path completo -->
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="./css/style.css" />
 
   </head>
 <!-- Inicia el header de cada pagina -->
@@ -28,18 +28,18 @@
         <!--Verificamos si esta ingresado, de ser asi, se mostrara el siguente menu-->
           <?php
           if (isset($_SESSION["useruid"])) {
-            echo "<li> <a href='index.php'> Perfil </a> </li>";
-            echo '<li> <a href="index.php"> Administración </a> </li>';
-            echo '<li> <a href="index.php"> Ventas </a> </li>';
-            echo '<li> <a href="index.php"> Diseño </a> </li>';
-            echo '<li> <a href="index.php"> Producción </a> </li>';
-            echo '<li> <a href="index.php"> Dirección de Proyectos </a> </li>';
-            echo "<li> <a href='signup.php'> Administración del Personal </a> </li>";
-            echo "<li> <a href='includes/logout.inc.php'> Terminar Session  </a> </li>";
+            echo "<li> <a href='/MuurDecoShop2/index.php'> Perfil </a> </li>";
+            echo '<li> <a href="/MuurDecoShop2/departments/administracion.php"> Administración </a> </li>';
+            echo '<li> <a href="/MuurDecoShop2/departments/ventas.php"> Ventas </a> </li>';
+            echo '<li> <a href="/MuurDecoShop2/index.php"> Diseño </a> </li>';
+            echo '<li> <a href="/MuurDecoShop2/index.php"> Producción </a> </li>';
+            echo '<li> <a href="/MuurDecoShop2/index.php"> Dirección de Proyectos </a> </li>';
+            echo "<li> <a href='/MuurDecoShop2/signup.php'> Administración del Personal </a> </li>";
+            echo "<li> <a href='/MuurDecoShop2/includes/logout.inc.php'> Terminar Session  </a> </li>";
           }
           // De no estar ingresado, se mostrara solo la opcion de ingresar
           else {
-            echo "<li> <a href='login.php'> Ingresar  </a> </li>";
+            echo "<li> <a href='/MuurDecoShop2/login.php'> Ingresar  </a> </li>";
           }
            ?>
 

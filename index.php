@@ -2,13 +2,7 @@
   include_once 'header.php'
  ?>
 
- <?php
 
- if (!isset($_SESSION["useruid"])) {
-   header("location: login.php?error=noingresado");
-   exit();
- }
-  ?>
 
         <section class="landingpage">
 
