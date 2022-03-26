@@ -2,7 +2,7 @@
 
 
 
-// session_start();
+session_start();
 	// print_r($_POST);
 if (isset($_POST["submit"])) {
 
@@ -10,7 +10,7 @@ if (isset($_POST["submit"])) {
     if($_POST['captcha'] == $_SESSION['code']){
       echo "Correct captcha";
       header("location: ../login.php?error=correct");
-    }else{
+    } else {
       header("location: ../login.php?error=wrongcaptcha");
       exit();
     }
@@ -20,15 +20,17 @@ if (isset($_POST["submit"])) {
   $username = $_POST["uid"];
   $pwd = $_POST["pwd"];
 
+  $tableInUse = "tblUsuarios";
+
 require_once 'dbh.inc.php';
-require_once 'functions.inc.php';
+require_once 'altaUsrsFNS.inc.php';
 
 //verificamos is no existen 3 intentos fallidos
 blockedUser($conn, $username, $pwd);
 
 
 if (emptyInputLogin($username, $pwd) !== false) {
-  header("location: ../login.php?error=emptyinput");
+  header("location: ../login.php?error=emptyinputs");
   exit();
 }
 
