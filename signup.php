@@ -97,8 +97,8 @@
 
 
               <div class="buttonContainer">
-                <button type="submit" name="submit">Submit</button>
-                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                <button type="submit" name="submit">Registrar</button>
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancelar</button>
                 <!-- <span class="psw">Forgot <a href="#">password?</a></span> -->
               </div>
             <!-- </form> -->

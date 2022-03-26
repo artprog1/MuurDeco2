@@ -2,8 +2,8 @@
 
 
 
-// session_start();
-	// print_r($_POST);
+session_start();
+	print_r($_POST);
 if (isset($_POST["submit"])) {
 
 

@@ -1,9 +1,12 @@
 <?php
 
 
-function emptyInputSignup($name, $paterno, $materno, $email, $username, $pwd, $pwdRepeat, $perfilU) {
+
+
+
+function emptyInputSignup($name, $paterno, $materno, $email, $username, $telefono, $pwd, $pwdRepeat) {
   $result;
-  if (empty($name) || empty($paterno) || empty($materno) || empty($email) || empty($username) || empty($pwd) || empty($pwdRepeat) || empty($perfilU) ) {
+  if (empty($name) || empty($paterno) || empty($materno) || empty($email) || empty($username) || empty($telefono) || empty($pwd) || empty($pwdRepeat) ) {
     $result = true;
   }
   else {
@@ -23,17 +26,17 @@ function invalidName($name, $paterno, $materno) {
   }
   return $result;
 }
-
-function invalidUid($username) {
-  $result;
-  if (!preg_match("/^[a-zA-Z0-9]*$/", $username )) {
-    $result = true;
-  }
-  else {
-    $result = false;
-  }
-  return $result;
-}
+//
+// function invalidUid($username) {
+//   $result;
+//   if (!preg_match("/^[a-zA-Z0-9]*$/", $username )) {
+//     $result = true;
+//   }
+//   else {
+//     $result = false;
+//   }
+//   return $result;
+// }
 
 
 function strongPwd($pwd) {
@@ -47,17 +50,17 @@ function strongPwd($pwd) {
   return $result;
 }
 
-
-function invalidEmail($email) {
-  $result;
-  if (filter_var ($email, FILTER_VALIDATE_EMAIL )) {
-    $result = true ;
-  }
-  else {
-    $result = false;
-  }
-  return $result;
-}
+// No used at all
+// function invalidEmail($email) {
+//   $result;
+//   if (filter_var ($email, FILTER_VALIDATE_EMAIL )) {
+//     $result = true ;
+//   }
+//   else {
+//     $result = false;
+//   }
+//   return $result;
+// }
 
 
 function pwdMatch($pwd, $pwdRepeat) {
@@ -73,10 +76,17 @@ function pwdMatch($pwd, $pwdRepeat) {
 
 
 function uidExists($conn, $username, $email) {
-  $sql = "SELECT * FROM tblUsuarios WHERE usersUid = ? OR correoUsuario = ?;";
+  $tableInUse = "tblUsuarios";
+  $sql = "SELECT * FROM ".$tableInUse." WHERE usersUid = ? OR correoUsuario = ?;";
+
   $stmt = mysqli_stmt_init($conn);
   if (!mysqli_stmt_prepare($stmt, $sql)) {
-    header("location: ../signup.php?error=stmtfailed");
+    // header("location: ../signup.php?error=stmtfailed");
+    // echo "string";
+    // echo  $stmt;
+    print_r($stmt);
+      echo "<br><br>STMT FAILED<br><br>";
+    echo $sql;
     exit();
   }
 
@@ -95,20 +105,26 @@ function uidExists($conn, $username, $email) {
 }
 
 
-function createUser($conn, $name, $paterno, $materno, $email, $username, $pwd, $perfilU) {
-  $sql = "INSERT INTO users (usersPrimerNombre, usersApellidoMaterno, usersApellidoPaterno, usersEmail, usersUid, usersPwd, perfil, incAtp) VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
-  //      INSERT INTO `users`(`usersPrimerNombre`, `usersApellidoMaterno`, `usersApellidoPaterno`, `usersEmail`, `usersUid`, `usersPwd`, `perfil`)
+function createUser($conn, $name, $paterno, $materno, $email, $username, $telefono, $dept, $pwd, $tableInUse, $headerUrlLink) {
+  // OLD QUERY
+  // $sql = "INSERT INTO $tableInUse (usersPrimerNombre, usersApellidoMaterno, usersApellidoPaterno, usersEmail, usersUid, usersPwd, perfil, incAtp) VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
+  // TABLE REFERENCE
+  //  INSERT INTO $tableInUse (`usersUid`, `correoUsuario`, `nombreUsuario`, `aPaternoUsuario`, `aMaternoUsuario`, `telefonoUsuario`, `idDepartamento2`, `contrasena`, incAttempt) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);
+
+  $sql = "INSERT INTO ".$tableInUse." (usersUid, correoUsuario, nombreUsuario, aPaternoUsuario, aMaternoUsuario, telefonoUsuario, idDepartamento2, contrasena, incAttempt) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);";
+
   $stmt = mysqli_stmt_init($conn);
   if (!mysqli_stmt_prepare($stmt, $sql)) {
-    header("location: ../signup.php?error=stmtfailed");
-    exit();
+    // header("location: ../$headerUrlLink?error=stmtfailed");
+    echo $sql;
+    // exit();
   }
-  $atpt = 0;
+  $intentos = 0;
   $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
-  mysqli_stmt_bind_param($stmt, "ssssssss", $name, $paterno, $materno, $email, $username, $hashedPwd, $perfilU, $atpt);
+  mysqli_stmt_bind_param($stmt, "sssssssss", $username, $email, $name, $paterno, $materno, $telefono, $dept, $hashedPwd, $intentos);
   mysqli_stmt_execute($stmt);
   mysqli_stmt_close($stmt);
-  header("location: ../signup.php?error=none");
+  header("location: ../$headerUrlLink?error=none");
   exit();
 }
 
@@ -131,9 +147,9 @@ function emptyInputLogIn($username, $pwd) {
 function blockedUser($conn, $username, $pwd){
   $udiExists = uidExists($conn, $username, $username);
   //if no data it reurns false, otherwise returns row
-   $numOfAttepms = $udiExists["incAtp"];
+   $numOfAttepms = $udiExists["incAttempt"];
    if ($numOfAttepms >= 3) {
-     header("location: ../login.php?error=blockedOut");
+     header("location: ../login2.php?error=blockedOut");
 
      exit();
    }
@@ -156,37 +172,37 @@ function blockedUser($conn, $username, $pwd){
 //   exit();
 // }
 function resetAttempt($conn, $username){
-$query = "UPDATE users SET incAtp=0 WHERE usersUid = '".$username."'";
+$query = "UPDATE ".$tableInUse." SET incAtp=0 WHERE usersUid = '".$username."'";
 $result = mysqli_query($conn, $query);
 }
 
 
-
+//
 function logInUser($conn, $username, $pwd){
   $udiExists = uidExists($conn, $username, $username);
   if ($udiExists === false) {
     // Al fallar contraseña, se incrementa valor de bd +1
-    header("location: ../login.php?error=wronglogin");
+    header("location: ../login2.php?error=wronglogin");
     exit();
   }
 
-   $pwdHashed = $udiExists["usersPwd"];
+   $pwdHashed = $udiExists["contrasena"];
    $checkPwd = password_verify($pwd, $pwdHashed );
 
    if ($checkPwd === false) {
 
-     $sql = "UPDATE users set incAtp = incAtp+1 WHERE usersUid = ?;";
+     $sql = "UPDATE tblUsuarios set incAttempt = incAttempt+1 WHERE idUsuario = ?;";
      $stmt = mysqli_stmt_init($conn);
      if (!mysqli_stmt_prepare($stmt, $sql)) {
-       header("location: ../login.php?error=stmtautoincrementfailed");
+       header("location: ../login2.php?error=stmtautoincrementfailed");
        exit();
      }
 
-     $idUser = $udiExists["usersUid"];
+     $idUser = $udiExists["idUsuario"];
      mysqli_stmt_bind_param($stmt, "s", $idUser);
      mysqli_stmt_execute($stmt);
      mysqli_stmt_close($stmt);
-     header("location: ../login.php?error=incorrectpwd");
+     header("location: ../login2.php?error=incorrectpwd");
      exit();
  }
 
@@ -194,8 +210,10 @@ function logInUser($conn, $username, $pwd){
     // Pending to reset attempts to 0
      resetAttempt($conn, $username);
      session_start();
-     $_SESSION["userid"] = $udiExists["usersId"];
+     $_SESSION["userid"] = $udiExists["idUsuario"];
      $_SESSION["useruid"] = $udiExists["usersUid"];
+     // idDepartamento2
+     $_SESSION["departamento"] = $udiExists["idDepartamento2"];
 
      header("location: ../index.php");
      exit();

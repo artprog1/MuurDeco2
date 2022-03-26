@@ -95,7 +95,7 @@ window.onclick = function(event) {
   if (isset($_GET["error"])) {
     ?>
   <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-    <?php 
+    <?php
   }
   if (isset($_GET["error"])) {
     if ($_GET["error"] == "emptyinput") {

@@ -1,0 +1,12 @@
+body{
+    /* background:  url("../img/muur.png") fixed center; //lightblue */
+
+
+}
+
+.center123 {
+  margin: auto;
+  width: 80%;
+  /* border: 3px solid green; */
+  padding: 10px;
+}
