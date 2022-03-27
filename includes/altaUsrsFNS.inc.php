@@ -149,7 +149,7 @@ function blockedUser($conn, $username, $pwd){
   //if no data it reurns false, otherwise returns row
    $numOfAttepms = $udiExists["incAttempt"];
    if ($numOfAttepms >= 3) {
-     header("location: ../login2.php?error=blockedOut");
+     header("location: ../login.php?error=blockedOut");
 
      exit();
    }
@@ -172,7 +172,7 @@ function blockedUser($conn, $username, $pwd){
 //   exit();
 // }
 function resetAttempt($conn, $username){
-$query = "UPDATE ".$tableInUse." SET incAtp=0 WHERE usersUid = '".$username."'";
+$query = "UPDATE tblUsuarios SET incAttempt=0 WHERE usersUid = '".$username."'";
 $result = mysqli_query($conn, $query);
 }
 
@@ -182,7 +182,7 @@ function logInUser($conn, $username, $pwd){
   $udiExists = uidExists($conn, $username, $username);
   if ($udiExists === false) {
     // Al fallar contraseña, se incrementa valor de bd +1
-    header("location: ../login2.php?error=wronglogin");
+    header("location: ../login.php?error=wronglogin");
     exit();
   }
 
@@ -194,7 +194,7 @@ function logInUser($conn, $username, $pwd){
      $sql = "UPDATE tblUsuarios set incAttempt = incAttempt+1 WHERE idUsuario = ?;";
      $stmt = mysqli_stmt_init($conn);
      if (!mysqli_stmt_prepare($stmt, $sql)) {
-       header("location: ../login2.php?error=stmtautoincrementfailed");
+       header("location: ../login.php?error=stmtautoincrementfailed");
        exit();
      }
 
@@ -202,7 +202,7 @@ function logInUser($conn, $username, $pwd){
      mysqli_stmt_bind_param($stmt, "s", $idUser);
      mysqli_stmt_execute($stmt);
      mysqli_stmt_close($stmt);
-     header("location: ../login2.php?error=incorrectpwd");
+     header("location: ../login.php?error=incorrectpwd");
      exit();
  }
 

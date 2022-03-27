@@ -34,7 +34,7 @@
 
          <div>
            <h1 class="page-header">Administración del Personal</h1>
-           <p>Modal con la finalidad de la administración de todo el personal</p>
+           <p>Area con la finalidad de la administración de todo el personal</p>
          </div>
          <div class="row placeholders">
            <div class="col-sm-8 col-md-6 col-lg-3 placeholder">

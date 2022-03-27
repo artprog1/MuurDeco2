@@ -10,7 +10,9 @@ $conn = mysqli_connect($serverName, $dBUserName, $dBPassword, $dBName );
     exit();
   }
 
-  $sql = "SELECT * FROM tblProvedores";
+  $sql = "SELECT tblInsumos.*, tblProvedores.nombreProvedor
+  FROM tblInsumos
+  INNER JOIN tblProvedores ON tblInsumos.idProvedor2 = tblProvedores.idProvedor ;";
   $result = mysqli_query($conn, $sql);
 
 ?>
@@ -27,43 +29,45 @@ $conn = mysqli_connect($serverName, $dBUserName, $dBPassword, $dBName );
       </div>
       <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
         <div>
-          <h1 class="page-header">Provedores</h1>
-          <p>Administración general de los provoedores y sus insumos</p>
+          <h1 class="page-header">Inventario</h1>
+          <p>Administración general de los insumos a trabajar.</p>
         </div>
         <div class="row placeholders">
           <div class="col-sm-8 col-md-6 col-lg-3 placeholder">
             <a href="#">
-            <img src="img/supply.jpg" width="1100" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+            <img src="img/inventary.jpg" width="1100" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
             </a>
             </div>
           </div>
 
-        <h2 class="sub-header"><br>Lista de Provedores</h2>
+        <h2 class="sub-header"><br>Lista de Inventario</h2>
         <div class="modal-content animate" style="width: 93%">
                  <table class="table table-striped table-hover table-bordered table-responsive-lg table-responsive-sm table-responsive-md">
                    <thead>
                      <tr>
-                       <th scope="col">ID Provedor</th>
+                       <th scope="col">ID Insumo</th>
                        <th scope="col">Nombre</th>
-                       <th scope="col">Telefono</th>
-                       <th scope="col">Tipo</th>
+                       <th scope="col">Costo del Insumo</th>
+                       <th scope="col">Tipo de Insumo</th>
+                       <th scope="col">Provedor</th>
 
                      </tr>
                  </thead>
                  <tbody>
                      <?php
                          while ($row=mysqli_fetch_assoc($result)) {
-                           $idProvedor = $row['idProvedor'];
-                           $nombreProvedor = $row['nombreProvedor'];
-                           $telProvedor = $row['telProvedor'];
-                           $tipoProvedor =  $row['tipoDeProvedor'];
+                           $IDInsumo = $row['idInsumos'];
+                           $NombreInsumo = $row['nombre'];
+                           $CostoInsumo = $row['costo'];
+                           $TipoInsumo =  $row['tipo'];
+                           $nombreProvedor =  $row['nombreProvedor'];
                        ?>
                        <tr>
-                         <th scope="row"><?php echo $idProvedor?></th>
+                         <th scope="row"><?php echo $IDInsumo?></th>
+                         <td><?php echo $NombreInsumo?></td>
+                         <td><?php echo $CostoInsumo?></td>
+                         <td><?php echo $TipoInsumo?></td>
                          <td><?php echo $nombreProvedor?></td>
-                         <td><?php echo $telProvedor?></td>
-                         <td><?php echo $tipoProvedor?></td>
-
                        </tr>
                        <?php } ?>
                   </tbody>
