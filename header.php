@@ -45,15 +45,15 @@
           <?php
           if (isset($_SESSION["useruid"]) && $_SESSION["departamento"] == 104) {
             require_once 'includes/caducarSesion.php';
-            echo "<li class='nav-item'> <a class='nav-link' href='dashboard.php'>Proyectos <span class='sr-only'>(current)</span></a> </li>";
+            echo "<li class='nav-item'> <a class='nav-link' href='dashboard.php'>Tablero <span class='sr-only'>(current)</span></a> </li>";
             echo "<li class='nav-item'> <a class='nav-link' href='ventas.php'>Ventas </a> </li>";
             echo "<li class='nav-item'> <a class='nav-link' href='administracion.php'>Administración </a> </li>";
             echo "<li class='nav-item'> <a class='nav-link' href='diseno.php'>Diseño </a> </li>";
-            echo "<li class='nav-item'> <a class='nav-link' href='index.php'>En Construcción</a> </li>";
-            echo "<li class='nav-item'> <a class='nav-link' href='index.php'>Dirección de Proyectos </a> </li>";
-            echo "<li class='nav-item'> <a class='nav-link' href='index.php'>Inventario</a> </li>";
+            echo "<li class='nav-item'> <a class='nav-link' href='produccion.php'>Producción</a> </li>";
+            echo "<li class='nav-item'> <a class='nav-link' href='direccion.php'>Dirección de Proyectos </a> </li>";
+            echo "<li class='nav-item'> <a class='nav-link' href='inventario.php'>Inventario</a> </li>";
             // echo "<li class='nav-item'> <a class='nav-link' href='signup.php'>Administración del Personal </a> </li>";
-            echo "<li class='nav-item'> <a class='nav-link' href='registros.php'>Registros </a> </li>";
+            echo "<li class='nav-item'> <a class='nav-link' href='registros.php'>Provedores</a> </li>";
             echo "<li class='nav-item'> <a class='nav-link' href='includes/logout.inc.php'>Terminar Session  </a> </li>";
           }
           // De no estar ingresado, se mostrara solo la opcion de ingresar
