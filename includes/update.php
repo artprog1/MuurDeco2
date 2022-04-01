@@ -10,25 +10,34 @@ if (isset($_POST['update'])) {
   // $UserAge = $_POST['age'];
 
   $UserID = $_GET['ID'];
-  $UserName = $_POST['name'];
-  $UserMaterno = $_POST['materno'];
-  $UserPaterno = $_POST['paterno'];
-  //$UserEmail = $_POST['correo'];
-  //$UserUID = $_POST['uid'];
-  $UserPerfil = $_POST['perfil'];
+  $usersUid = $_POST['uid'];
+  $correoUsuario = $_POST['email'];
+  $nombreUsuario = $_POST['nombre'];
+  $aPaternoUsuario = $_POST['paterno'];
+  $aMaternoUsuario = $_POST['materno'];
+  $telefonoUsuario = $_POST['telefono'];
+  $idDepartamento2 = $_POST['departamento'];
 
-  $query = " UPDATE users SET usersPrimerNombre = '".$UserName."', usersApellidoMaterno = '".$UserMaterno."', usersApellidoPaterno = '".$UserPaterno."', perfil = '".$UserPerfil."' where usersId='".$UserID."';";
+  $query = " UPDATE tblUsuarios SET usersUid = '".$usersUid
+  ."', correoUsuario = '".$correoUsuario
+  ."', nombreUsuario = '".$nombreUsuario
+  ."', aPaternoUsuario = '".$aPaternoUsuario
+  ."', aMaternoUsuario = '".$aMaternoUsuario
+  ."', telefonoUsuario = '".$telefonoUsuario
+  ."', idDepartamento2 = '".$idDepartamento2
+  ."' where idUsuario='".$UserID."';";
+
   $result = mysqli_query($conn,$query);  // ', usersUid = '".$UserUID." ', usersEmail = '".$UserEmail."
 
 
 
   if ($result) {
 
-    header("location: ../signup.php?msg=updatedone");
+    header("location: ../administracion.php?msg=updatedone");
   }
   else {
-echo $UserID . $UserName .  $UserMaterno .  $UserPaterno .  $UserPerfil;  // $UserEmail . $UserUID .
-    echo "Favor de checar los datos";
+
+    print_r("Error 98876 -->".$result);
   }
 }
 else {

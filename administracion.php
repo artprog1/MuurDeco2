@@ -90,7 +90,8 @@ require_once 'includes/dbh.inc.php';
                    <!-- <td><?php echo $UserPerfil?></td> -->
                    <td> <a href="includes/edit.php?GetID=<?php echo $UserID?>">Editar</a> </td>
                  </tr>
-                 <?php } ?>
+                 <?php }
+                 ?>
             </tbody>
            </table>
       </div>
