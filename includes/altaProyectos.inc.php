@@ -9,6 +9,7 @@ if (isset($_POST["submit"])) {
   $departamentoAsg = $_POST["departamentoAsignado"];
   $statusfactura = $_POST["factura"]; //Se va anular
   $idCliente = $_POST["idCliente2"];
+  $comentarios = $_POST["comentarios"];
 
   // $perfilU  = $_POST["perfil"];
   // Ingresamos referencia la pagina
@@ -37,7 +38,7 @@ if (emptyInputSignup($proyecto, $description, $statusProyecto, $departamentoAsg,
 
 //Contrasena debe de ser mas fuerte
 
-createUser($conn, $proyecto, $description, $statusProyecto, $departamentoAsg, $statusfactura, $idCliente ,$tableInUse, $urlLink);
+createUser($conn, $proyecto, $description, $statusProyecto, $departamentoAsg, $statusfactura, $idCliente, $comentarios, $tableInUse, $urlLink);
 
 
 }

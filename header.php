@@ -44,6 +44,7 @@
         <!--Verificamos si esta ingresado, de ser asi, se mostrara el siguente menu-->
           <?php
           if (isset($_SESSION["useruid"]) && $_SESSION["departamento"] == 104) {
+          // if (isset$_SESSION["useruid"]) && $_SESSION["departamento"] == 104) {
             require_once 'includes/caducarSesion.php';
             echo "<li class='nav-item'> <a class='nav-link' href='dashboard.php'>Tablero <span class='sr-only'>(current)</span></a> </li>";
             echo "<li class='nav-item'> <a class='nav-link' href='ventas.php'>Ventas </a> </li>";
@@ -58,7 +59,7 @@
           }
           // De no estar ingresado, se mostrara solo la opcion de ingresar
           else {
-            echo "<li class='nav-item'> <a class='nav-link' href='login.php'>Ingresar <span class='sr-only'>(current)</span> </a> </li>";
+            echo "<li class='nav-item'> <a class='nav-link' href='login.php'>Ingresar<span class='sr-only'>(current)</span></a></li>";
           }
            ?>
 

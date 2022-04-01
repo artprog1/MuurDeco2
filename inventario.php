@@ -9,7 +9,7 @@ $conn = mysqli_connect($serverName, $dBUserName, $dBPassword, $dBName );
     header("location: login.php?error=noingresado");
     exit();
   }
-
+  require_once 'modal.php';
   $sql = "SELECT tblInsumos.*, tblProvedores.nombreProvedor
   FROM tblInsumos
   INNER JOIN tblProvedores ON tblInsumos.idProvedor2 = tblProvedores.idProvedor ;";
@@ -22,8 +22,16 @@ $conn = mysqli_connect($serverName, $dBUserName, $dBPassword, $dBName );
   <div class="row">
     <div class="col-sm-3 col-md-2 col-lg-2 sidebar ">
       <ul class="nav nav-sidebar list-group-flush">
-        <li class="list-group-item" style="width: 100%"><a href="#">Proyectos Pendientes<span class="sr-only">(current)</span></a></li>
-        <li class="list-group-item" style="width: 100%"><a href="#">Proyectos Completados</a></li>
+        <li class="list-group-item" style="width: 100%">
+          <button type="button" class="btn btn-primary" style="width: 100%; height: 45px" data-toggle="modal" data-target="#id01">
+            Nuevo Cliente
+          </button>
+        </li>
+        <li class="list-group-item" style="width: 100%">
+          <button type="button" class="btn btn-primary" style="width: 100%; height: 45px" data-toggle="modal" data-target="#modalAltaDeProyecto">
+            Nuevo Proyecto
+          </button>
+          </li>
       </ul>
 
       </div>
