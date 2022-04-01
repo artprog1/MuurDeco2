@@ -7,13 +7,13 @@
      body{
        background-image: url("img/bkgd.jpg");
        background-repeat: no-repeat;
-       background-size: 100% ;
+       background-size: 1500px ;
      }
    </style>
  </head>
 
 <!-- card-body -->
-<div class="form-group" style="background-color:  ">
+<div class="form-group ">
 
     <div class="header" style="max-width: 500px; margin: auto;">
       <h1 class="fw-light text-black m-0">Bienvenido!</h1>
@@ -24,8 +24,9 @@
         <!-- <section class="index-intro"> -->
 
         <div class="dropdown-divider"></div>
-
-          <form class="px-4 py-3" action="includes/loginUsrs.inc.php" method="post">
+<!-- // -->
+          <form class="px-4 py-3 bg-light rounded border border-light" action="includes/loginUsrs.inc.php" method="post">
+            <!-- <span class="border border-dark"></span> -->
               <div class="form-group">
                 <label for="uid">Usuario</label>
                 <input type="text" name="uid" class="form-control" placeholder="Correo Electronico / ID Usuario...">

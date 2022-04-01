@@ -4,9 +4,9 @@
 
 
 
-function emptyInputSignup($proyecto, $description, $statusProyecto, $departamentoAsg, $statusfactura) {
+function emptyInputSignup($empresa, $telefono, $insumo) {
   $result;
-  if (empty($proyecto) || empty($description) || empty($statusProyecto) || empty($departamentoAsg) || empty($statusfactura)) {
+  if (empty($empresa) || empty($telefono) || empty($insumo) ) {
     $result = true;
   }
   else {
@@ -18,50 +18,51 @@ function emptyInputSignup($proyecto, $description, $statusProyecto, $departament
 
 
 
-function uidExists($conn, $username, $email, $tableInUse) {
-  $sql = "SELECT * FROM ".$tableInUse." WHERE usersUid = ? OR correoUsuario = ?;";
+// function uidExists($conn, $username, $email, $tableInUse) {
+//   $sql = "SELECT * FROM ".$tableInUse." WHERE nombreProvedor = ?;";
+//
+//   $stmt = mysqli_stmt_init($conn);
+//   if (!mysqli_stmt_prepare($stmt, $sql)) {
+//
+//     echo $sql;
+//     exit();
+//   }
+//
+//   mysqli_stmt_bind_param($stmt, "ss", $username, $email);
+//   mysqli_stmt_execute($stmt);
+//   $resultData = mysqli_stmt_get_result($stmt);
+// // si hay data, tenemos que tomar la info con este usuario
+//   if ($row = mysqli_fetch_assoc($resultData)) {
+//      return $row;
+//   }
+//   else {
+//     $result = false;
+//     return $result;
+//   }
+//   mysqli_stmt_close($stmt);
+// }
 
-  $stmt = mysqli_stmt_init($conn);
-  if (!mysqli_stmt_prepare($stmt, $sql)) {
 
-    echo $sql;
-    exit();
-  }
-
-  mysqli_stmt_bind_param($stmt, "ss", $username, $email);
-  mysqli_stmt_execute($stmt);
-  $resultData = mysqli_stmt_get_result($stmt);
-// si hay data, tenemos que tomar la info con este usuario
-  if ($row = mysqli_fetch_assoc($resultData)) {
-     return $row;
-  }
-  else {
-    $result = false;
-    return $result;
-  }
-  mysqli_stmt_close($stmt);
-}
-
-
-function createUser($conn, $proyecto, $description, $statusProyecto, $departamentoAsg, $statusfactura, $idCliente, $comentarios ,$tableInUse, $headerUrlLink) {
+function createUser($conn, $empresa, $telefono, $insumo, $tableInUse, $headerUrlLink) {
   // OLD QUERY
   // $sql = INSERT INTO `tblProyectos` (`idProyecto`, `nombreProyecto`, `descripcion`, `pdf`, `estatusDelProyecto`, `departamentoAsignado`, `estatusDeFactura`)
 
   // TABLE REFERENCE
   //  INSERT INTO $tableInUse (`usersUid`, `correoUsuario`, `nombreUsuario`, `aPaternoUsuario`, `aMaternoUsuario`, `telefonoUsuario`, `idDepartamento2`, `contrasena`, incAttempt) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);
 
-  $sql = "INSERT INTO ".$tableInUse." (nombreProyecto, descripcion, estatusDelProyecto, departamentoAsignado, estatusDeFactura, idCliente2, Comentarios) VALUES (?, ?, ?, ?, ?, ?, ?);";
+  $sql = "INSERT INTO ".$tableInUse." (nombreProvedor, telProvedor, tipoDeProvedor) VALUES (?, ?, ?);";
 
   $stmt = mysqli_stmt_init($conn);
+  
   if (!mysqli_stmt_prepare($stmt, $sql)) {
     // header("location: ../$headerUrlLink?error=stmtfailed");
-    echo $sql;
+    echo "Aqui hay un error!! 801209";
     print_r($sql);
     // exit();
   }
   // $intentos = 0;
   // $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
-  mysqli_stmt_bind_param($stmt, "sssssss", $proyecto, $description, $statusProyecto, $departamentoAsg, $statusfactura, $idCliente, $comentarios );
+  mysqli_stmt_bind_param($stmt, "sss", $empresa, $telefono, $insumo);
   mysqli_stmt_execute($stmt);
   mysqli_stmt_close($stmt);
   header("location: ../$headerUrlLink?error=none");

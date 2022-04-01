@@ -1,18 +1,27 @@
 <!-- <link rel="stylesheet" href="../css/style.css" /> -->
 <?php
   include_once 'header.php';
-  require_once 'includes/dbh.inc.php';
+require_once 'includes/dbh.inc.php';
 
     if (!isset($_SESSION["useruid"])) {
       header("location: login.php?error=noingresado");
       exit();
     }
+
+
+    require_once 'modal.php';
     // Query para tabla de Clientes
     $sqlClientes = "SELECT * FROM tblClientes;";
     $resultClientes = mysqli_query($conn, $sqlClientes);
 
     // Query para tabla de Proyectos
-    $sql = "SELECT * FROM tblProyectos;";
+    // $sql = "SELECT * FROM tblProyectos;";
+    $sql = "SELECT tblProyectos.*, tblDepartamentos.nombre, tblClientes.*
+    FROM tblProyectos
+    INNER JOIN tblDepartamentos ON tblProyectos.departamentoAsignado=tblDepartamentos.idDepartamento
+    INNER JOIN tblClientes ON tblProyectos.idCliente2 = tblClientes.idCliente
+    ORDER BY tblProyectos.idProyecto DESC";
+
     $result = mysqli_query($conn, $sql);
 
  ?>
@@ -22,9 +31,22 @@
    <div class="row">
      <div class="col-sm-3 col-md-2 col-lg-2 sidebar ">
        <ul class="nav nav-sidebar list-group-flush">
-         <li class="list-group-item" style="width: 100%"><a href="#">Registrar Cliente<span class="sr-only">(current)</span></a></li>
-         <li class="list-group-item" style="width: 100%"><a href="#">Generar Proyecto</a></li>
-         <li class="list-group-item" style="width: 100%"><a href="#">Generar Cotización</a></li>
+         <li class="list-group-item" style="width: 100%">
+           <button type="button" class="btn btn-primary" style="width: 100%; height: 45px" data-toggle="modal" data-target="#id01">
+             Nuevo Cliente
+           </button>
+         </li>
+         <li class="list-group-item" style="width: 100%">
+           <button type="button" class="btn btn-primary" style="width: 100%; height: 45px" data-toggle="modal" data-target="#modalAltaDeProyecto">
+             Nuevo Proyecto
+           </button>
+           </li>
+
+         <!-- <li class="list-group-item" style="width: 100%">
+           <button type="button" class="btn btn-primary" style="width: 100%; height: 45px" data-toggle="modal" data-target="#modalAltaDeProyecto">
+             Realizar Cotización
+           </button>
+           </li> -->
          <!-- <li class="list-group-item" style="width: 100%"><button type="button" class="btn btn-light" style="width: 100%">Light</button></li> -->
        </ul>
 
@@ -90,10 +112,10 @@
              <th scope="col">Descripción</th>
              <th scope="col">PDF</th>
              <!-- <th scope="col">Perfil</th> -->
-             <th scope="col">Estatus</th>
-             <th scope="col">Departamento Asignado</th>
+             <th scope="col">Estatus del Proyecto</th>
+             <!-- <th scope="col">Departamento Asignado</th>
              <th scope="col">Estatus de Factura</th>
-             <th scope="col">Cliente</th>
+             <th scope="col">Cliente</th> -->
 
            </tr>
          </thead>
@@ -105,9 +127,9 @@
                  $descripcion = $row['descripcion'];
                  $pdf = $row['pdf'];
                  $estatusDelProyecto = $row['estatusDelProyecto'];
-                 $departamentoAsignado =  $row['departamentoAsignado'];;
+                 $departamentoAsignado =  $row['nombre'];;
                  $estatusDeFactura = $row['estatusDeFactura'];
-                 $idCliente2 = $row['idCliente2'];
+                 $idCliente2 = $row['nombreCliente']." ".$row['aPaternoCliente']." ".$row['aMaternoCliente'];
              ?>
              <tr>
                <th scope="row"><?php echo $idProyecto?></th>
@@ -115,9 +137,10 @@
                <td><?php echo $descripcion ?></td>
                <td><?php echo $pdf ?></td>
                <td><?php echo $estatusDelProyecto ?></td>
-               <td><?php echo $departamentoAsignado ?></td>
+               <!-- TEMPORALMENTE  DESHABILITO ESTAS COLUMNAS -->
+               <!-- <td><?php echo $departamentoAsignado ?></td>
                <td><?php echo $estatusDeFactura ?></td>
-               <td><?php echo $idCliente2 ?></td>
+               <td><?php echo $idCliente2 ?></td> -->
                <!-- <td> <a href="../includes/edit.php?GetID=<?php echo $UserID?>">Editar</a> </td>
 
                <td> <a href="../includes/delete.php?Del=<?php echo $UserID?>" onclick="return confirm('Are you sure?')">Borrar</a> </td>
@@ -133,8 +156,6 @@
 
 </div>
 </div>
-
-
 
 
 
