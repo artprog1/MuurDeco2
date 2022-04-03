@@ -24,8 +24,8 @@ WHERE departamentoAsignado = 107;";
   <div class="row">
     <div class="col-sm-3 col-md-2 col-lg-2 sidebar ">
       <ul class="nav nav-sidebar list-group-flush">
-        <li class="list-group-item" style="width: 100%"><a href="#">Proyectos Pendientes<span class="sr-only">(current)</span></a></li>
-        <li class="list-group-item" style="width: 100%"><a href="#">Proyectos Completados</a></li>
+        <li class="list-group-item" style="width: 100%">Se requiere que los diseñadores puedan integrar sus avances semanalmente<span class="sr-only">(current)</span></li>
+        <!-- <li class="list-group-item" style="width: 100%">Proyectos Completados</li> -->
       </ul>
 
       </div>

@@ -9,7 +9,10 @@ $conn = mysqli_connect($serverName, $dBUserName, $dBPassword, $dBName );
     header("location: login.php?error=noingresado");
     exit();
   }
+
+
   require_once 'modal.php';
+
   $sql = "SELECT tblInsumos.*, tblProvedores.nombreProvedor
   FROM tblInsumos
   INNER JOIN tblProvedores ON tblInsumos.idProvedor2 = tblProvedores.idProvedor ;";
@@ -23,15 +26,11 @@ $conn = mysqli_connect($serverName, $dBUserName, $dBPassword, $dBName );
     <div class="col-sm-3 col-md-2 col-lg-2 sidebar ">
       <ul class="nav nav-sidebar list-group-flush">
         <li class="list-group-item" style="width: 100%">
-          <button type="button" class="btn btn-primary" style="width: 100%; height: 45px" data-toggle="modal" data-target="#id01">
-            Nuevo Cliente
+          <button type="button" class="btn btn-primary" style="width: 100%; height: 45px" data-toggle="modal" data-target="#id04">
+            Ingresar Artículo
           </button>
         </li>
-        <li class="list-group-item" style="width: 100%">
-          <button type="button" class="btn btn-primary" style="width: 100%; height: 45px" data-toggle="modal" data-target="#modalAltaDeProyecto">
-            Nuevo Proyecto
-          </button>
-          </li>
+
       </ul>
 
       </div>
@@ -48,6 +47,8 @@ $conn = mysqli_connect($serverName, $dBUserName, $dBPassword, $dBName );
             </div>
           </div>
 
+
+
         <h2 class="sub-header"><br>Lista de Inventario</h2>
         <div class="modal-content animate" style="width: 93%">
                  <table class="table table-striped table-hover table-bordered table-responsive-lg table-responsive-sm table-responsive-md">
@@ -58,7 +59,7 @@ $conn = mysqli_connect($serverName, $dBUserName, $dBPassword, $dBName );
                        <th scope="col">Costo del Insumo</th>
                        <th scope="col">Tipo de Insumo</th>
                        <th scope="col">Provedor</th>
-
+                       <th scope="col">Editar</th>
                      </tr>
                  </thead>
                  <tbody>
@@ -76,6 +77,7 @@ $conn = mysqli_connect($serverName, $dBUserName, $dBPassword, $dBName );
                          <td><?php echo $CostoInsumo?></td>
                          <td><?php echo $TipoInsumo?></td>
                          <td><?php echo $nombreProvedor?></td>
+                         <td> <a href="includes/edit3.php?GetID=<?php echo $IDInsumo?>">Editar</a> </td>
                        </tr>
                        <?php } ?>
                   </tbody>
