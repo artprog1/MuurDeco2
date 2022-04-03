@@ -24,8 +24,7 @@ WHERE departamentoAsignado = 108;";
   <div class="row">
     <div class="col-sm-3 col-md-2 col-lg-2 sidebar ">
       <ul class="nav nav-sidebar list-group-flush">
-        <li class="list-group-item" style="width: 100%"><a href="#">Proyectos Pendientes<span class="sr-only">(current)</span></a></li>
-        <li class="list-group-item" style="width: 100%"><a href="#">Proyectos Completados</a></li>
+        <li class="list-group-item" style="width: 100%">Se Requiere Actualizacón cuando se complete cada proyecto<span class="sr-only">(current)</span></li>
       </ul>
 
       </div>
@@ -71,7 +70,9 @@ WHERE departamentoAsignado = 108;";
                        ?>
                        <tr>
                          <th scope="row"><?php echo $idProyecto?></th>
-                         <td><?php echo $NombreProyecto?></td>
+                         <td>
+                           <a href="includes/edit5.php?GetID=<?php echo $idProyecto ?>"><?php echo $NombreProyecto ?></a>
+                         </td>
                          <td><?php echo $estatusDelProyecto?></td>
                          <td><?php echo $Descripcion?></td>
                          <td><?php echo $Cliente?></td>

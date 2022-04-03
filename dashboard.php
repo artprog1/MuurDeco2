@@ -23,9 +23,9 @@ INNER JOIN tblClientes ON tblProyectos.idCliente2 = tblClientes.idCliente;";
   <div class="row">
     <div class="col-sm-3 col-md-2 col-lg-2 sidebar ">
       <ul class="nav nav-sidebar list-group-flush">
-        <li class="list-group-item" style="width: 100%"><a href="#">Grafica de Proyectos<span class="sr-only">(current)</span></a></li>
-        <li class="list-group-item" style="width: 100%"><a href="#">Grafica de Insumos</a></li>
-        <li class="list-group-item" style="width: 100%"><a href="#">Grafica de Clientes</a></li>
+        <!-- <li class="list-group-item" style="width: 100%"><a href="#">Grafica de Proyectos<span class="sr-only">(current)</span></a></li> -->
+        <!-- <li class="list-group-item" style="width: 100%"><a href="#">Grafica de Insumos</a></li> -->
+        <!-- <li class="list-group-item" style="width: 100%"><a href="#">Grafica de Clientes</a></li> -->
 
       </ul>
 

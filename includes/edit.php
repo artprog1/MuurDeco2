@@ -24,6 +24,7 @@ include_once '../header.php';
 
 
 
+
           <!-- <form action="update.php?ID=<?php echo $UserID; ?>" method="post">
             <input type="text" class="form-control mb-2" placeholder=" Nombre " name="name" value="<?php echo $UserName; ?>">
             <!-- <input type="text" class="form-control mb-2" placeholder=" Paterno " name="materno" value="<?php echo $UserMaterno; ?>">
@@ -50,8 +51,8 @@ include_once '../header.php';
 
 
 
-          <div class="modalss" id="id30" style="">
-            <div id="id30" class="modal-dialog modal-dialog-centered modal-xl" style="">
+          <div class="modalss" id="id32" style="">
+            <div id="id32" class="modal-dialog modal-dialog-centered modal-xl" style="">
 
 
 
@@ -155,11 +156,33 @@ include_once '../header.php';
                     </div>
 
 
-                    <div class="">
-                      <button class="btn btn-primary" type="submit" name="update">Registrar</button>
+                    <div class="row" >
+
+                        <div class="col-md-2">
+                          <button class="btn btn-primary" style="width: 100%" type="submit" name="update">Actualizar</button>
+                        </div>
+
+                        <div class="col-md-2">
+                          <button class="btn btn-danger" style="width: 100%" type="submit" formaction="delete.php?Del=<?php echo $UserID?>" onclick="clicked(event)">Borrar</button>
+
+                        </div>
+
+
+
                     </div>
                         </form>
+
                    </div>
 
 
             </div>
+
+            <script>
+              function clicked(e)
+                {
+                  if(!confirm('¿Seguro deseas borrar de manera permanente?'))
+                    {
+                      e.preventDefault();
+                    }
+                }
+            </script>

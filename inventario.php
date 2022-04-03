@@ -10,6 +10,7 @@ $conn = mysqli_connect($serverName, $dBUserName, $dBPassword, $dBName );
     exit();
   }
 
+
   require_once 'modal.php';
 
   $sql = "SELECT tblInsumos.*, tblProvedores.nombreProvedor
@@ -58,7 +59,7 @@ $conn = mysqli_connect($serverName, $dBUserName, $dBPassword, $dBName );
                        <th scope="col">Costo del Insumo</th>
                        <th scope="col">Tipo de Insumo</th>
                        <th scope="col">Provedor</th>
-
+                       <th scope="col">Editar</th>
                      </tr>
                  </thead>
                  <tbody>
@@ -76,6 +77,7 @@ $conn = mysqli_connect($serverName, $dBUserName, $dBPassword, $dBName );
                          <td><?php echo $CostoInsumo?></td>
                          <td><?php echo $TipoInsumo?></td>
                          <td><?php echo $nombreProvedor?></td>
+                         <td> <a href="includes/edit3.php?GetID=<?php echo $IDInsumo?>">Editar</a> </td>
                        </tr>
                        <?php } ?>
                   </tbody>

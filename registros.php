@@ -16,6 +16,17 @@ $conn = mysqli_connect($serverName, $dBUserName, $dBPassword, $dBName );
 
 ?>
 
+<div class="">
+  <?php
+
+  if (isset($_GET["msg"])) {
+  if ($_GET["msg"] == "parent") {
+      echo "<p class='font-weight-light'>Favor de borrar los insumos ligados con este Provedor</p>";
+  }
+  }
+  ?>
+</div>
+
 <br><br>
 <div class="container-fluid">
   <div class="row">
@@ -23,7 +34,7 @@ $conn = mysqli_connect($serverName, $dBUserName, $dBPassword, $dBName );
       <ul class="nav nav-sidebar list-group-flush">
         <li class="list-group-item" style="width: 100%">
           <button type="button" class="btn btn-primary" style="width: 100%; height: 45px" data-toggle="modal" data-target="#id03">
-            Registrar Proveedor
+            Nuevo Proveedor
           </button>
         </li>
 
@@ -32,7 +43,7 @@ $conn = mysqli_connect($serverName, $dBUserName, $dBPassword, $dBName );
       </div>
       <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
         <div>
-          <h1 class="page-header">Provedores</h1>
+          <h1 class="page-header">Proveedores Registrados</h1>
           <p>Administración general de los provoedores y sus insumos</p>
         </div>
         <div class="row placeholders">
@@ -54,6 +65,7 @@ $conn = mysqli_connect($serverName, $dBUserName, $dBPassword, $dBName );
                        <th scope="col">Nombre</th>
                        <th scope="col">Telefono</th>
                        <th scope="col">Tipo</th>
+                       <th scope="col">Modificar</th>
 
                      </tr>
                  </thead>
@@ -70,7 +82,7 @@ $conn = mysqli_connect($serverName, $dBUserName, $dBPassword, $dBName );
                          <td><?php echo $nombreProvedor?></td>
                          <td><?php echo $telProvedor?></td>
                          <td><?php echo $tipoProvedor?></td>
-
+                         <td> <a href="includes/edit2.php?GetID=<?php echo $idProvedor?>">Editar</a> </td>
                        </tr>
                        <?php } ?>
                   </tbody>

@@ -43,23 +43,27 @@
 
         <!--Verificamos si esta ingresado, de ser asi, se mostrara el siguente menu-->
           <?php
+          // FOLDER DEPENDE DEL SERVIDOR
+          // $folder = "http://localhost:8888/MuurDecoShop2/";
+          $folder = "https://muurdeco.online/";
+
           if (isset($_SESSION["useruid"]) && $_SESSION["departamento"] == 104) {
           // if (isset$_SESSION["useruid"]) && $_SESSION["departamento"] == 104) {
             require_once 'includes/caducarSesion.php';
-            echo "<li class='nav-item'> <a class='nav-link' href='dashboard.php'>Tablero <span class='sr-only'>(current)</span></a> </li>";
-            echo "<li class='nav-item'> <a class='nav-link' href='ventas.php'>Ventas </a> </li>";
-            echo "<li class='nav-item'> <a class='nav-link' href='administracion.php'>Administración </a> </li>";
-            echo "<li class='nav-item'> <a class='nav-link' href='diseno.php'>Diseño </a> </li>";
-            echo "<li class='nav-item'> <a class='nav-link' href='produccion.php'>Producción</a> </li>";
-            echo "<li class='nav-item'> <a class='nav-link' href='direccion.php'>Dirección de Proyectos </a> </li>";
-            echo "<li class='nav-item'> <a class='nav-link' href='inventario.php'>Inventario</a> </li>";
+            echo "<li class='nav-item'> <a class='nav-link' href='".$folder."dashboard.php'>Tablero <span class='sr-only'>(current)</span></a> </li>";
+            echo "<li class='nav-item'> <a class='nav-link' href='".$folder."ventas.php'>Ventas </a> </li>";
+            echo "<li class='nav-item'> <a class='nav-link' href='".$folder."administracion.php'>Administración </a> </li>";
+            echo "<li class='nav-item'> <a class='nav-link' href='".$folder."diseno.php'>Diseño </a> </li>";
+            echo "<li class='nav-item'> <a class='nav-link' href='".$folder."produccion.php'>Producción</a> </li>";
+            echo "<li class='nav-item'> <a class='nav-link' href='".$folder."direccion.php'>Dirección de Proyectos </a> </li>";
+            echo "<li class='nav-item'> <a class='nav-link' href='".$folder."inventario.php'>Inventario</a> </li>";
             // echo "<li class='nav-item'> <a class='nav-link' href='signup.php'>Administración del Personal </a> </li>";
-            echo "<li class='nav-item'> <a class='nav-link' href='registros.php'>Provedores</a> </li>";
-            echo "<li class='nav-item'> <a class='nav-link' href='includes/logout.inc.php'>Terminar Session  </a> </li>";
+            echo "<li class='nav-item'> <a class='nav-link' href='".$folder."registros.php'>Provedores</a> </li>";
+            echo "<li class='nav-item'> <a class='nav-link' href='".$folder."includes/logout.inc.php'>Terminar Session  </a> </li>";
           }
           // De no estar ingresado, se mostrara solo la opcion de ingresar
           else {
-            echo "<li class='nav-item'> <a class='nav-link' href='login.php'>Ingresar<span class='sr-only'>(current)</span></a></li>";
+            echo "<li class='nav-item'> <a class='nav-link' href='".$folder."login.php'>Ingresar<span class='sr-only'>(current)</span></a></li>";
           }
            ?>
 

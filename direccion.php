@@ -25,8 +25,7 @@ ORDER BY tblDepartamentos.idDepartamento DESC";
   <div class="row">
     <div class="col-sm-3 col-md-2 col-lg-2 sidebar ">
       <ul class="nav nav-sidebar list-group-flush">
-        <li class="list-group-item" style="width: 100%"><a href="#">Proyectos Pendientes<span class="sr-only">(current)</span></a></li>
-        <li class="list-group-item" style="width: 100%"><a href="#">Proyectos Completados</a></li>
+        <li class="list-group-item" style="width: 100%">Se requiere una revision diaria con todos los proyectos<span class="sr-only">(current)</span></li>
       </ul>
 
       </div>
@@ -60,6 +59,7 @@ ORDER BY tblDepartamentos.idDepartamento DESC";
                        <!-- <th scope="col">PDF</th> -->
                      </tr>
                  </thead>
+
                  <tbody>
                      <?php
                          while ($row=mysqli_fetch_assoc($result)) {
@@ -73,13 +73,14 @@ ORDER BY tblDepartamentos.idDepartamento DESC";
                        ?>
                        <tr>
                          <th scope="row"><?php echo $idProyecto?></th>
-                         <td><?php echo $NombreProyecto?></td>
-                         <td><?php echo $Descripcion?></td>
+                         <td>
+                           <a href="includes/edit4.php?GetID=<?php echo $idProyecto ?>"><?php echo $NombreProyecto ?></a>
+                         </td>
+                         <td><?php echo $Descripcion?></td></a>
                          <td><?php echo $estatusDelProyecto?></td>
-
                          <td><?php echo $nombreDepartamento?></td>
                          <td><?php echo $Comentarios?></td>
-                         <!-- <td><?php //echo $Pdf?></td> -->
+                         <!-- <td><?php //echo $Pdheref?></td> -->
                        </tr>
                        <?php } ?>
                   </tbody>
