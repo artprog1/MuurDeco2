@@ -2,9 +2,17 @@
 <?php
   include_once 'header.php';
 require_once 'includes/dbh.inc.php';
-
+    // Verificamos si esta ingresado a la session
     if (!isset($_SESSION["useruid"])) {
       header("location: login.php?error=noingresado");
+      exit();
+    }
+    //verificamos si es usuario permitido
+    // 103 Ventas, 102- Gerencia, 104-root, 105-admin
+
+    // Sacamos a los usuarios no admitidos
+    if ( $_SESSION["departamento"] == 100 || $_SESSION["departamento"] == 102  || $_SESSION["departamento"] == 101  || $_SESSION["departamento"] == 106 || $_SESSION["departamento"] == 107 || $_SESSION["departamento"] == 108  || $_SESSION["departamento"] == 109  ) {
+      header("location: index.php?error=usuarioNoAdmitido");
       exit();
     }
 
@@ -77,7 +85,7 @@ require_once 'includes/dbh.inc.php';
              <th scope="col">Nombre</th>
              <th scope="col">Dirección</th>
              <th scope="col">Telefono</th>
-
+             <th scope="col">Editar</th>
            </thead>
            <tbody>
            <?php
@@ -92,6 +100,7 @@ require_once 'includes/dbh.inc.php';
                <td><?php echo $nombreCliente ?></td>
                <td><?php echo $direccion ?></td>
                <td><?php echo $telefonoCliente ?></td>
+               <td> <a href="includes/edit6.php?GetID=<?php echo $idCliente?>">Modificar</a> </td>
             </tr>
              <?php  }  ?>
            </tbody>
@@ -113,6 +122,7 @@ require_once 'includes/dbh.inc.php';
              <th scope="col">PDF</th>
              <!-- <th scope="col">Perfil</th> -->
              <th scope="col">Estatus del Proyecto</th>
+             <th scope="col">Modificar</th>
              <!-- <th scope="col">Departamento Asignado</th>
              <th scope="col">Estatus de Factura</th>
              <th scope="col">Cliente</th> -->
@@ -137,6 +147,8 @@ require_once 'includes/dbh.inc.php';
                <td><?php echo $descripcion ?></td>
                <td><?php echo $pdf ?></td>
                <td><?php echo $estatusDelProyecto ?></td>
+               <td> <a href="includes/edit7.php?GetID=<?php echo $idProyecto?>">Modificar</a> </td>
+
                <!-- TEMPORALMENTE  DESHABILITO ESTAS COLUMNAS -->
                <!-- <td><?php echo $departamentoAsignado ?></td>
                <td><?php echo $estatusDeFactura ?></td>

@@ -9,6 +9,17 @@ $conn = mysqli_connect($serverName, $dBUserName, $dBPassword, $dBName );
     header("location: login.php?error=noingresado");
     exit();
   }
+
+  if (
+      $_SESSION["departamento"] == 100 || $_SESSION["departamento"] == 101 ||  $_SESSION["departamento"] == 103 ||
+      $_SESSION["departamento"] == 107 ||
+      $_SESSION["departamento"] == 108 ||
+      $_SESSION["departamento"] == 109  )
+    {
+      header("location: index.php?error=usuarioNoAdmitido");
+      exit();
+    }
+
   include_once 'modal.php';
 
   $sql = "SELECT * FROM tblProvedores";

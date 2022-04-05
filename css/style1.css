@@ -1,0 +1,265 @@
+body{
+  /* background :  url("../img/muur.png") fixed center; //lightblue */
+
+
+}
+
+/* id = "name" es buscado con # */
+
+
+
+.container-modal {
+
+  /* display: flex; */
+  margin: 2% 2% 2% 2%;
+  padding: 16px;
+  background-color: #fff;
+  border-radius: 30px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  /* overflow: hidden; */
+
+
+}
+
+.loginform {
+    width: 70%; /* Could be more or less, depending on screen size */
+     margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+     /* border: 3px solid #888; */
+}
+
+.signup-form {
+  /* display: inline-flex;
+   */
+
+
+
+}
+
+ .input-box {
+
+}
+
+.form-control {
+ margin-bottom: 10px;
+ padding-bottom: 10px;
+ position: relative;
+}
+
+ .form-control label {
+ display: inline-block;
+     /* justify-content:space-between; */
+ /* margin-bottom: 5px; */
+}
+
+/* .form-control input { */
+ border: 2px solid #f0f0f0;
+ border-radius: 4px;
+ display: block;
+ font-family: inherit;
+ font-size: 14px;
+ /* padding: 10px; */
+ /* width: 100%; */
+}
+
+.form-control input:focus {
+ outline: 0;
+ border-color: #777;
+}
+
+.form-control.success input {
+ border-color: #2ecc71;
+}
+
+.form-control.error input {
+ border-color: #e74c3c;
+}
+
+/* .form-control i { */
+ visibility: hidden;
+ position: absolute;
+ top: 40px;
+ right: 10px;
+}
+
+.form-control.success i.fa-check-circle {
+ color: #2ecc71;
+ visibility: visible;
+}
+
+.form-control.error i.fa-exclamation-circle {
+ color: #e74c3c;
+ visibility: visible;
+}
+
+.form-control small {
+ color: #e74c3c;
+ position: absolute;
+ bottom: 0;
+ left: 0;
+ visibility: hidden;
+}
+
+.form-control.error small {
+ visibility: visible;
+}
+
+ .datosPrimero, .datosSegundo, .datosTercero {
+   width: 100%;
+   max-width: 800px;
+   display: inline-flex;
+
+  /* align-items: stretch;
+  align-items: center; */
+
+}
+
+
+
+/* UNLOCK THIS?? */
+ input[type=text], input[type=email], input[type=password], .selector  {
+   width: 100%;
+   padding: 12px 20px;
+   margin: 8px 0;
+   /* display: inline-block; */
+   /* border: 1px solid #ccc; */
+   /* box-sizing: border-box; */
+ }
+
+ /* Set a style for all buttons */
+ button {
+   background-color: #04AA6D;
+   color: white;
+   padding: 14px 20px;
+   margin: 8px 0;
+   border: none;
+   cursor: pointer;
+   width: 10%;
+ }
+
+ button:hover {
+   opacity: 0.8;
+ }
+
+ /* Extra styles for the cancel button */
+ .cancelbtn {
+   width: auto;
+   padding: 10px 18px;
+   background-color: #f44336;
+ }
+
+ span.psw {
+   float: right;
+   padding-top: 16px;
+ }
+
+/* Escondemos por default */
+ .modal {
+   display: none;
+    /* none; */
+ }
+
+
+
+ /* Modal Content/Box */
+
+
+
+
+ /* The Close Button (x) */
+ .close {
+   position: absolute;
+   right: 25px;
+   top: 0;
+   color: #000;
+   font-size: 35px;
+   font-weight: bold;
+ }
+
+ .close:hover,
+ .close:focus {
+   color: red;
+   cursor: pointer;
+ }
+
+ /* Add Zoom Animation */
+ .animate {
+   -webkit-animation: animatezoom 0.6s;
+   animation: animatezoom 0.6s
+ }
+
+
+/*
+ @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+ @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,500&display=swap');
+
+ * {
+ 	box-sizing: border-box;
+ }
+
+ body {
+ 	background-color: #9b59b6;
+ 	font-family: 'Open Sans', sans-serif;
+ 	display: flex;
+ 	align-items: center;
+ 	justify-content: center;
+ 	min-height: 100vh;
+ 	margin: 0;
+ } */
+
+
+ .header {
+ 	border-bottom: 1px solid #f0f0f0;
+ 	background-color: #f7f7f7;
+ 	padding: 20px 40px;
+ }
+
+ .header h2 {
+ 	margin: 0;
+ }
+
+
+
+
+
+ /* .form button { */
+ 	background-color: #8e44ad;
+ 	border: 2px solid #8e44ad;
+ 	border-radius: 4px;
+ 	color: #fff;
+ 	display: block;
+ 	font-family: inherit;
+ 	font-size: 16px;
+ 	padding: 10px;
+ 	margin-top: 20px;
+ 	width: 100%;
+ }
+
+
+
+
+
+
+
+
+
+
+ @-webkit-keyframes animatezoom {
+   from {-webkit-transform: scale(0)}
+   to {-webkit-transform: scale(1)}
+ }
+
+ @keyframes animatezoom {
+   from {transform: scale(0)}
+   to {transform: scale(1)}
+ }
+
+ /* Change styles for span and cancel button on extra small screens */
+ @media screen and (max-width: 300px) {
+   span.psw {
+      display: block;
+      float: none;
+   }
+   .cancelbtn {
+      width: 100%;
+   }
+ }

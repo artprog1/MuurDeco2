@@ -16,7 +16,7 @@
 <div class="form-group ">
 
     <div class="header" style="max-width: 500px; margin: auto;">
-      <h1 class="fw-light text-black m-0">Bienvenido!</h1>
+      <!-- <h1 class="fw-light text-black m-0">Bienvenido!</h1> -->
       <h3 class="fw-light text-black m-0">— Ingresa tus credenciales —</h3>
     </div>
 

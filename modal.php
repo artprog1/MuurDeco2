@@ -99,7 +99,7 @@
       <form class="modal-content animate" id="signupform" action="includes/altaProyectos.inc.php" method="post" style="padding: 12px 20px; margin: 8px 0;">
         <h1>Nuevo Proyecto<br></h1>
             <div class="form-row">
-                <div class="form-group col-lg-3 col-sm-6">
+                <div class="form-group col-4">
                   <label for="proyecto">Titulo del Proyecto</label>
                   <input type="text"  class="form-control" name="proyecto" placeholder="Titulo del Proyecto" id="idProyecto" />
                </div>
@@ -107,15 +107,15 @@
                  <label for="pdf">Archivo PDF</label>
                  <!-- <input type="email"  class="form-control" name="pdf" placeholder="Correo@Electronico.com" id="none" /> -->
                </div>
-               <div class="form-group col-lg-2 col-md-3">
+               <div class="form-group col-4">
                  <label for="statusProyecto">Estatus del Proyecto</label>
                  <select  class="custom-select" name="statusProyecto">
-                   <option value="Pendiente" >Seleccione Area</option>
-                   <option value="Bajo Revisión">Bajo Revisión</option>
-                   <option value="Aprobado por Administración">Aprobado por Administración</option>
-                   <option value="Diseño En Progreso">Diseño En Progreso</option>
-                   <option value="En Produccion">En Produccion</option>
-                   <option value="Completado">Completado</option>
+                   <?php
+                      $sqlm = mysqli_query($conn, "SELECT * FROM tblFlujo");
+                      while ($row1 = $sqlm->fetch_assoc()){
+                      // $value =   $row1['idDepartamento']
+                      echo "<option value='".$row1['NombreFlujo']."'>". $row1['Secuencia'].". ".$row1['NombreFlujo']."</option>";
+                    }?>
                  </select>
                  <!-- <input type="text"  class="form-control" name="statusProyecto" placeholder="Id_Usario" id="none" /> -->
                </div>
@@ -125,7 +125,7 @@
                </div> -->
 
                <!-- GENERAR EL QUERY DE LOS DEPTS -->
-               <div class="form-group col-lg-2 col-md-6">
+               <div class="form-group col-3">
                  <label for="departamentoAsignado">Departamento</label>
                  <select class="custom-select" name="departamentoAsignado" placeholder="Departamento">
                    <!-- <option value="Pendiente" >Seleccione Area</option> -->
@@ -153,7 +153,7 @@
                </div> -->
              </div>
              <div class="form-row">
-               <div class="form-group col-lg-3 col-md-3">
+               <div class="form-group col-3">
                  <label for="factura">Estatus de la Factura</label>
                  <select  class="custom-select" name="factura">
                    <option value="Pendiente" >Seleccione Area</option>
@@ -162,17 +162,8 @@
                  </select>
                  <!-- <input type="text"  class="form-control" name="statusProyecto" placeholder="Id_Usario" id="none" /> -->
                </div>
-               <div class="form-row">
-                 <div class="form-group col-md-12 col-sm-12">
-                   <label for="comentarios">Comentario del Equipo</label>
-                   <textarea class="form-control" id="description" name="comentarios" placeholder="Comentario acerca del proyecto" rows="2"> </textarea>
-                 </div>
-                 <!-- <div class="form-group col-md-4 col-sm-6">
-                   <label for="nombre">Apellido Materno</label>
-                   <input type="text"  class="form-control" name="materno" placeholder=" A. Materno " id="primernombre" />
-                 </div> -->
-               </div>
-               <div class="form-group col-lg-3 col-md-3">
+
+               <div class="form-group col-3">
                  <label for="idCliente2">Cliente Asignado</label>
                  <select  class="custom-select" name="idCliente2">
                    <?php
@@ -184,6 +175,11 @@
                  </select>
                  <!-- <input type="text"  class="form-control" name="statusProyecto" placeholder="Id_Usario" id="none" /> -->
                </div>
+               <div class="form-group col-6">
+                 <label for="comentarios">Comentario del Equipo</label>
+                 <textarea class="form-control" id="description" name="comentarios" placeholder="Comentario acerca del proyecto" rows="2"> </textarea>
+               </div>
+
               </div>
 
 
