@@ -12,6 +12,10 @@
       $result = mysqli_query($conn, $sql);
  ?>
 
+<head>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
 <div class="entire-body-content">
 
   <section class="BotonesIniciales">
@@ -26,44 +30,44 @@
         <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
         <!-- <img src="img/user.jpeg" alt="Avatar" class="avatar"> -->
       <!-- </div> -->
-      <div class="container-modal">
+      <div class="col-12">
         <h1>Datos del Personal</h1>
         <section class="signup-form">
 
-          <div class="datosPrimero">
+          <div class="form-control row">
 
-            <div class="form-control input-box">
+            <div class="col-4">
              <label for="nombre">Nombre</label>
              <input type="text" name="nombre" placeholder="Primer Nombre..." id="primernombre" />
              <small>Error message</small>
            </div>
-            <div class="form-control input-box">
+            <div class="col-4">
              <label for="paterno">Paterno</label>
              <input type="text" name="paterno" placeholder="Apellido Paterno..." id="paterno" />
              <small>Error message</small>
            </div>
-          <div class="form-control input-box">
+          <div class="col-4">
             <label for="materno">Materno</label>
             <input type="text" name="materno" placeholder="Apellido Materno..." id="materno" />
             <small>Error message</small>
           </div>
         </div>
 
-        <div class="datosSegundo">
-           <div class="form-control">
+        <div class="form-control  row">
+           <div class="col-4">
              <label for="email">Correo Electronico</label>
              <input type="email" name="email" placeholder="Correo Electronico..." id="email" />
              <br>
              <small>Error message</small>
            </div>
 
-           <div class="form-control input-box">
+           <div class="col-4">
              <label for="uid">ID de Usuario</label>
              <input type="text" name="uid" placeholder="ID de Usuario.." id="idusuario" />
              <small>Error message</small>
            </div>
 
-           <div class="form-control input-box">
+           <div class="col-4">
              <label for="perfil">Area</label>
              <select class="selector" name="perfil" placeholder="Area">
                <option value="Pendiente" >Seleccione Area</option>
@@ -76,14 +80,14 @@
            </div>
          </div>
 
-         <div class="datosTercero">
-           <div class="form-control input-box">
+         <div class="form-control row">
+           <div class="col-4">
               <label for="pwd">Contraseña</label>
               <input type="password" name="pwd" placeholder="Contraseña..." id="password" />
               <small>Error message</small>
             </div>
 
-            <div class="form-control input-box">
+            <div class="col-4">
               <label for="pwdrepetido">Confirmar</label>
               <input type="password" name="pwdrepetido" placeholder="Confirmar Contraseña" id="password2" />
               <small>Error message</small>

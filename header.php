@@ -22,7 +22,7 @@
     <link href="dashboard.css" rel="stylesheet">
 <!-- Incluimos el archivo de CSS a utilizar con un path completo -->
     <!-- <link rel="stylesheet" href="css/reset.css" /> -->
-    <link rel="stylesheet" href="css/style0.css">
+    <!-- <link rel="stylesheet" href="css/style0.css"> -->
 
 
   </head>
@@ -44,8 +44,8 @@
         <!--Verificamos si esta ingresado, de ser asi, se mostrara el siguente menu-->
           <?php
           // FOLDER DEPENDE DEL SERVIDOR
-          $folder = "http://localhost:8888/MuurDecoShop2/";
-          // $folder = "https://muurdeco.online/";
+          // $folder = "http://localhost:8888/MuurDecoShop2/";
+          $folder = "https://muurdeco.online/";
 
           if (isset($_SESSION["useruid"]) && $_SESSION["departamento"] == 104 || $_SESSION["departamento"] == 105 || $_SESSION["departamento"] == 104) {
           // if (isset$_SESSION["useruid"]) && $_SESSION["departamento"] == 104) {
@@ -58,7 +58,7 @@
             echo "<li class='nav-item'> <a class='nav-link' href='".$folder."direccion.php'>Dirección de Proyectos </a> </li>";
             echo "<li class='nav-item'> <a class='nav-link' href='".$folder."inventario.php'>Inventario</a> </li>";
             echo "<li class='nav-item'> <a class='nav-link' href='".$folder."registros.php'>Provedores</a> </li>";
-            // echo "<li class='nav-item'> <a class='nav-link' href='signup.php'>Administración del Personal </a> </li>";
+            echo "<li class='nav-item'> <a class='nav-link' href='signup.php'>Administración del Personal </a> </li>";
             echo "<li class='nav-item'> <a class='nav-link' href='".$folder."includes/logout.inc.php'>Terminar Session  </a> </li>";
           }
           // HEADER DE VENTAS
