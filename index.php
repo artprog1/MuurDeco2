@@ -1,7 +1,7 @@
 <?php include_once 'header.php' ?>
 
       <div class="row justify-content-md-center col-md-auto">
-        <h2><br>Bienvenido a MuurDeco WorkShop</h2>
+        <h2><br>Bienvenido <?php echo $_SESSION["nombreUsuario"]; ?></h2>
       </div>
 
       <div class="container" style="max-width: 75%">

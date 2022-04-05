@@ -9,6 +9,15 @@ $conn = mysqli_connect($serverName, $dBUserName, $dBPassword, $dBName );
     exit();
   }
 
+  if (
+      $_SESSION["departamento"] == 100 || $_SESSION["departamento"] == 101 ||  $_SESSION["departamento"] == 103 || $_SESSION["departamento"] == 106 ||
+      $_SESSION["departamento"] == 107 ||
+      $_SESSION["departamento"] == 109  )
+    {
+      header("location: index.php?error=usuarioNoAdmitido");
+      exit();
+    }
+
   $sql = "SELECT tblProyectos.*, tblDepartamentos.nombre, tblClientes.*
 FROM tblProyectos
 INNER JOIN tblDepartamentos ON tblProyectos.departamentoAsignado=tblDepartamentos.idDepartamento

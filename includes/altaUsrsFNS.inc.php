@@ -214,6 +214,7 @@ function logInUser($conn, $username, $pwd){
      $_SESSION["useruid"] = $udiExists["usersUid"];
      // idDepartamento2
      $_SESSION["departamento"] = $udiExists["idDepartamento2"];
+     $_SESSION["nombreUsuario"] = $udiExists["nombreUsuario"]. " ".$udiExists["aPaternoUsuario"]." ".$udiExists["aMaternoUsuario"];
 
      header("location: ../index.php");
      exit();

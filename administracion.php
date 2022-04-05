@@ -10,6 +10,17 @@ require_once 'includes/dbh.inc.php';
       exit();
     }
 
+    //verificamos si es usuario permitido
+    // 105 Administracion, 102- Gerencia, 104-root, 105-admin
+
+    // Sacamos a los usuarios no admitidos
+    if (
+        $_SESSION["departamento"] == 100 || $_SESSION["departamento"] == 103 || $_SESSION["departamento"] == 106 || $_SESSION["departamento"] == 108 || $_SESSION["departamento"] == 109  )
+      {
+        header("location: index.php?error=usuarioNoAdmitido");
+        exit();
+      }
+
 
     require_once 'modal.php';
     // $sql = "SELECT * FROM tblUsuarios;";
