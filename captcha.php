@@ -10,12 +10,9 @@ session_start();
 		}
 	}
 ?>
-<!-- test -->
-
 <html>
 <head>
     <title>Simple CAPTCHA Script in PHP</title>
-
 </head>
 
   <body>

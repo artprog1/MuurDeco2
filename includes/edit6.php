@@ -22,16 +22,6 @@ include_once '../header.php';
 
     }
 
-    // $query2 = "SELECT * FROM tblDepartamentos WHERE idDepartamento ='".$departamentoAsignado."'";
-    // $result2 = mysqli_query($conn, $query2);
-    // while ($row3=mysqli_fetch_assoc($result2)) {
-    //   $depaOriginal = $row3['nombre'];
-    // }
-
-
-
-
-    // $row3 = $result2->fetch_assoc()
 ?>
 
 
@@ -108,11 +98,15 @@ include_once '../header.php';
                         } ?>
                       </div>
 
+                  <div class="row" >
                      <div class="col-2">
                        <button class="btn btn-primary" style="width: 100%" type="submit" name="update">Actualizar</button>
                      </div>
+                     <div class="col-md-2">
+                       <button class="btn btn-danger" style="width: 100%" type="submit" formaction="delete6.php?Del=<?php echo $idCliente?>" onclick="clicked(event)">Borrar</button>
 
-
+                     </div>
+                   </div>
 
                 </form>
                 </div>
@@ -122,7 +116,7 @@ include_once '../header.php';
             <script>
               function clicked(e)
                 {
-                  if(!confirm('¿Seguro deseas borrar de manera permanente?'))
+                  if(!confirm('¿Seguro deseas borrar de manera permanente? Todos los proyectos relacionados serán eliminados.'))
                     {
                       e.preventDefault();
                     }
