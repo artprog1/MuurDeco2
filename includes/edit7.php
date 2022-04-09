@@ -44,7 +44,7 @@ include_once '../header.php';
               <div id="id40" class="modal-dialog modal-dialog-centered modal-xl" style="">
                 <form class="modal-content animate" id="signupform" action="updateProyecto.php?ID=<?php echo $idProyecto; ?>" method="post" style="padding: 12px 20px; margin: 8px 0;">
 
-                  <h1>Nuevo Proyecto<br></h1>
+                  <h1>Modificar Proyecto<br></h1>
                       <div class="form-row">
                           <div class="form-group col-4">
                             <label for="proyecto">Titulo del Proyecto</label>
@@ -184,11 +184,15 @@ include_once '../header.php';
                         } ?>
                       </div>
 
+                  <div class="row">
                      <div class="col-2">
                        <button class="btn btn-primary" style="width: 100%" type="submit" name="update">Actualizar</button>
                      </div>
 
-
+                     <div class="col-md-2">
+                       <button class="btn btn-danger" style="width: 100%" type="submit" formaction="delete7.php?Del=<?php echo $idProyecto?>" onclick="clicked(event)">Borrar</button>
+                     </div>
+                  </div>
 
                 </form>
                 </div>

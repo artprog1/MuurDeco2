@@ -7,8 +7,6 @@ $captcha_num = '123456789abcdefghijkmnpqrstuvwxyz';
 $captcha_num = substr(str_shuffle($captcha_num), 0, 6);
 //declaramos variable global del captcha
 $_SESSION["code"] = $captcha_num;
-
-
 $font_size = 30;
 $img_width = 170;
 $img_height = 40;

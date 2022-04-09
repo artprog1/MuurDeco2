@@ -39,15 +39,11 @@
       <div  class="collapse navbar-collapse" id="navbarTogglerDemo01">
         <a class="navbar-brand" href="index.php">MuurDeco's WorkShop</a>
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-          <!-- Indexamos los diferentes Portales disponibles -->
-
-        <!--Verificamos si esta ingresado, de ser asi, se mostrara el siguente menu-->
           <?php
           // FOLDER DEPENDE DEL SERVIDOR
           // $folder = "http://localhost:8888/MuurDecoShop2/";
           $folder = "https://muurdeco.online/";
-
-          if (isset($_SESSION["useruid"]) && $_SESSION["departamento"] == 104 || $_SESSION["departamento"] == 105 || $_SESSION["departamento"] == 104) {
+          if (isset($_SESSION["useruid"]) && $_SESSION["departamento"] == 104 || $_SESSION["departamento"] == 105 ) {
           // if (isset$_SESSION["useruid"]) && $_SESSION["departamento"] == 104) {
             require_once 'includes/caducarSesion.php';
             echo "<li class='nav-item'> <a class='nav-link' href='".$folder."dashboard.php'>Tablero <span class='sr-only'>(current)</span></a> </li>";
@@ -58,7 +54,7 @@
             echo "<li class='nav-item'> <a class='nav-link' href='".$folder."direccion.php'>Dirección de Proyectos </a> </li>";
             echo "<li class='nav-item'> <a class='nav-link' href='".$folder."inventario.php'>Inventario</a> </li>";
             echo "<li class='nav-item'> <a class='nav-link' href='".$folder."registros.php'>Provedores</a> </li>";
-            echo "<li class='nav-item'> <a class='nav-link' href='signup.php'>Administración del Personal </a> </li>";
+            // echo "<li class='nav-item'> <a class='nav-link' href='signup.php'>Administración del Personal </a> </li>";
             echo "<li class='nav-item'> <a class='nav-link' href='".$folder."includes/logout.inc.php'>Terminar Session  </a> </li>";
           }
           // HEADER DE VENTAS
