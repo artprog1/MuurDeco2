@@ -14,6 +14,7 @@
 
 <head>
   <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/FEValidation.js"></script>
 </head>
 
 <div class="entire-body-content">
@@ -22,7 +23,7 @@
     <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Nuevo Registro</button>
   </section>
 
-  <div id="id01" class="modal">
+  <div id="id01" class="modal col-12">
 
 
     <form class="modal-content animate" id="signupform" action="includes/signup.inc.php" method="post">
@@ -34,40 +35,40 @@
         <h1>Datos del Personal</h1>
         <section class="signup-form">
 
-          <div class="form-control row">
+        <div class="form-row">   <!-- form-control -->
 
-            <div class="col-4">
+            <div class="form-group col-3">
              <label for="nombre">Nombre</label>
-             <input type="text" name="nombre" placeholder="Primer Nombre..." id="primernombre" />
+             <input type="text" name="nombre" placeholder="Primer Nombre..." id="name" />
              <small>Error message</small>
            </div>
-            <div class="col-4">
+            <div class="form-group col-3">
              <label for="paterno">Paterno</label>
              <input type="text" name="paterno" placeholder="Apellido Paterno..." id="paterno" />
              <small>Error message</small>
            </div>
-          <div class="col-4">
+          <div class="form-group col-3">
             <label for="materno">Materno</label>
             <input type="text" name="materno" placeholder="Apellido Materno..." id="materno" />
             <small>Error message</small>
           </div>
         </div>
 
-        <div class="form-control  row">
-           <div class="col-4">
+        <div class="form-row">
+           <div class="form-group col-4">
              <label for="email">Correo Electronico</label>
              <input type="email" name="email" placeholder="Correo Electronico..." id="email" />
              <br>
              <small>Error message</small>
            </div>
 
-           <div class="col-4">
+           <div class="form-group col-4">
              <label for="uid">ID de Usuario</label>
              <input type="text" name="uid" placeholder="ID de Usuario.." id="idusuario" />
              <small>Error message</small>
            </div>
 
-           <div class="col-4">
+           <div class="form-group col-4">
              <label for="perfil">Area</label>
              <select class="selector" name="perfil" placeholder="Area">
                <option value="Pendiente" >Seleccione Area</option>
@@ -80,19 +81,24 @@
            </div>
          </div>
 
-         <div class="form-control row">
-           <div class="col-4">
+         <div class="form-row">
+           <div class="form-group col-4">
               <label for="pwd">Contraseña</label>
               <input type="password" name="pwd" placeholder="Contraseña..." id="password" />
               <small>Error message</small>
             </div>
 
-            <div class="col-4">
+            <div class="form-group col-4">
               <label for="pwdrepetido">Confirmar</label>
               <input type="password" name="pwdrepetido" placeholder="Confirmar Contraseña" id="password2" />
               <small>Error message</small>
             </div>
 
+         </div>
+         <div class="form-row">
+           <div id="error">
+
+           </div>
          </div>
 
 
@@ -132,7 +138,7 @@
  }
  </script>
 
-<script src="js/signupEmployee.js"></script>
+<!-- <script src="js/signupEmployee.js"></script> -->
 <!--  -->
 <!-- Regresamos todos los errores de parte del backend.  -->
  <div class="alert">

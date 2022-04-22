@@ -32,6 +32,11 @@ require_once 'includes/dbh.inc.php';
     $result = mysqli_query($conn, $sql);
  ?>
 
+ <head>
+   <script defer src="js/FEValidationPersonal.js"></script>
+   <!-- <script defer src="js/FEValidationProyectos.js"></script> -->
+ </head>
+
  <br><br>
  <div class="container-fluid">
    <div class="row">

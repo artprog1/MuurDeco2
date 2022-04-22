@@ -2,10 +2,10 @@ const form = document.getElementById('signupform');
 const username = document.getElementById('primernombre');
 const paterno = document.getElementById('paterno');
 const materno = document.getElementById('materno');
-const email = document.getElementById('email');
-const uid = document.getElementById('idusuario');
-const password = document.getElementById('password');
-const password2 = document.getElementById('password2');
+// const email = document.getElementById('email');
+// const uid = document.getElementById('idusuario');
+// const password = document.getElementById('password');
+// const password2 = document.getElementById('password2');
 
 let validity = 1;
 
@@ -31,10 +31,10 @@ function checkInputs() {
 	const usernameValue = username.value.trim();
   const paternoValue = paterno.value.trim()
   const maternoValue = materno.value.trim()
-  const uidValue = uid.value.trim()
-  const emailValue = email.value.trim();
-  const passwordValue = password.value.trim();
-	const password2Value = password2.value .trim();
+  // const uidValue = uid.value.trim()
+  // const emailValue = email.value.trim();
+  // const passwordValue = password.value.trim();
+	// const password2Value = password2.value .trim();
 
 
 	if(usernameValue === '') {
@@ -56,33 +56,33 @@ function checkInputs() {
 		setSuccessFor(materno);
 	}
 
-  if(uidValue === '') {
-    setErrorFor(uid, 'ID de usuario debe llenarse');
-  } else {
-    setSuccessFor(uid);
-  }
-
-	if(emailValue === '') {
-		setErrorFor(email, 'Falta correo electronico');
-	} else if (!isEmail(emailValue)) {
-		setErrorFor(email, 'No es un correo valido');
-	} else {
-		setSuccessFor(email);
-	}
-
-	if(passwordValue === '') {
-		setErrorFor(password, 'Contraseña no puede estar en blanco');
-	} else {
-		setSuccessFor(password);
-	}
-
-	if(password2Value === '') {
-		setErrorFor(password2, 'No puede estar en blanco');
-	} else if(passwordValue !== password2Value) {
-		setErrorFor(password2, 'Contraseñas no coinciden');
-	} else{
-		setSuccessFor(password2);
-	}
+  // if(uidValue === '') {
+  //   setErrorFor(uid, 'ID de usuario debe llenarse');
+  // } else {
+  //   setSuccessFor(uid);
+  // }
+	//
+	// if(emailValue === '') {
+	// 	setErrorFor(email, 'Falta correo electronico');
+	// } else if (!isEmail(emailValue)) {
+	// 	setErrorFor(email, 'No es un correo valido');
+	// } else {
+	// 	setSuccessFor(email);
+	// }
+	//
+	// if(passwordValue === '') {
+	// 	setErrorFor(password, 'Contraseña no puede estar en blanco');
+	// } else {
+	// 	setSuccessFor(password);
+	// }
+	//
+	// if(password2Value === '') {
+	// 	setErrorFor(password2, 'No puede estar en blanco');
+	// } else if(passwordValue !== password2Value) {
+	// 	setErrorFor(password2, 'Contraseñas no coinciden');
+	// } else{
+	// 	setSuccessFor(password2);
+	// }
 
 
 }
@@ -93,14 +93,14 @@ function setErrorFor(input, message) {
 	validity = 1;
 	const formControl = input.parentElement;
 	const small = formControl.querySelector('small');
-	formControl.className = 'form-control error';
+	formControl.className = 'form-group col-md-4 col-sm-6 error';
 	small.innerText = message;
 }
 
 function setSuccessFor(input) {
 	validity = 0;
 	const formControl = input.parentElement;
-	formControl.className = 'form-control success';
+	formControl.className = 'form-group col-md-4 col-sm-6 success';
 }
 
 function isEmail(email) {
