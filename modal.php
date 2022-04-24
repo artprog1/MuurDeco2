@@ -42,7 +42,7 @@
              <div class="form-group col-4">
               <label for="telefono">Teléfono</label>
               <!-- <input type="number" class="form-control" name="telefono" placeholder="(33) 1234 5678" id="telefono" /> -->
-              <input type="text" maxlength="10" class="form-control" name="telefono" pattern="\d{10}" name="telefono" placeholder="(33) 1234 5678" id="telefono" title="Favor de manter 10 digitos numericos" />
+              <input type="text" maxlength="10" class="form-control" name="telefono" pattern="\d{10}" title="Favor de manter 10 digitos numericos"  id="telefono" />
               </div>
             </div>
             <div class="form-row col 2">
@@ -96,7 +96,7 @@
                  <label for="departamentoAsignado">Departamento</label>
                  <select class="custom-select" name="departamentoAsignado" placeholder="Departamento" >
                    <?php
-                      $sqlm = mysqli_query($conn, "SELECT * FROM tblDepartamentos");
+                      $sqlm = mysqli_query($conn, "SELECT * FROM tblDepartamentos WHERE idDepartamento = 103 OR idDepartamento = 106 OR idDepartamento = 107 OR idDepartamento = 108 OR idDepartamento = 109  ;");
                       while ($row1 = $sqlm->fetch_assoc()){
                       echo "<option value='".$row1['idDepartamento']."'>". $row1['nombre']."</option>";
                     }?>
@@ -350,15 +350,15 @@
           <div class="form-row">
               <div class="form-group col-md-4 col-sm-6">
                 <label for="empresa">Nombre de Empresa</label>
-                <input type="text"  class="form-control" name="empresa" placeholder="Pintura Jalisco SA. de CV."/>
+                <input type="text"  class="form-control" name="empresa" id="empresa" placeholder="Pintura Jalisco SA. de CV."/>
              </div>
              <div class="form-group col-md-4 col-sm-6">
                <label for="telefono">Teléfono</label>
-               <input type="text"  class="form-control" name="telefono" placeholder="(33) 1234 4556 " id="primernombreProvedor" />
+               <input type="text" pattern="\d{10}" title="Favor de manter 10 digitos numericos" maxlength="10" class="form-control" name="telefono" id="telef" placeholder="(33) 1234 4556 " id="primernombreProvedor" />
              </div>
              <div class="form-group col-sm-4 col-md-4">
                <label for="insumo">Tipo de Insumo</label>
-               <select class="custom-select" name="insumo" placeholder="Departamento">
+               <select class="custom-select" name="insumo" id="insumo" placeholder="Departamento">
                  <!-- <option value="Pendiente" >Seleccione Area</option> -->
                  <!-- <option value="100">Finanzas</option> -->
                  <!-- <option value="101">Administracion</option> -->
@@ -369,6 +369,10 @@
                     echo "<option value='".$row1['Insumo']."'>". $row1['Insumo']."</option>";
                   }?>
              </select>
+             </div>
+             <div class="form-row col 2">
+               <div id="errorProvedor">
+               </div>
              </div>
 
           <div class="alert">

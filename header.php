@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="../../dist/css/bootstrap.min.css">
     <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
     <link href="dashboard.css" rel="stylesheet">
-    
+
 <!-- Incluimos el archivo de CSS a utilizar con un path completo -->
     <!-- <link rel="stylesheet" href="css/reset.css" /> -->
     <!-- <link rel="stylesheet" href="css/style0.css"> -->
@@ -38,7 +38,7 @@
       </button>
       <!-- La lista de abajo son los modulos que se van a crear -->
       <div  class="collapse navbar-collapse" id="navbarTogglerDemo01">
-        <a class="navbar-brand" href="index.php">MuurDeco's WorkShop</a>
+        <a class="navbar-brand" href="index.php">MuurDeco's WorkShop <h6><?php echo $_SESSION["nombreUsuario"]; ?></h6></a>
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
           <?php
           // FOLDER DEPENDE DEL SERVIDOR
@@ -55,7 +55,7 @@
             echo "<li class='nav-item'> <a class='nav-link' href='".$folder."direccion.php'>Dirección de Proyectos </a> </li>";
             echo "<li class='nav-item'> <a class='nav-link' href='".$folder."inventario.php'>Inventario</a> </li>";
             echo "<li class='nav-item'> <a class='nav-link' href='".$folder."registros.php'>Provedores</a> </li>";
-            echo "<li class='nav-item'> <a class='nav-link' href='signup.php'>Administración del Personal </a> </li>";
+            // echo "<li class='nav-item'> <a class='nav-link' href='signup.php'>Administración del Personal </a> </li>";
             echo "<li class='nav-item'> <a class='nav-link' href='".$folder."includes/logout.inc.php'>Terminar Session  </a> </li>";
           }
           // HEADER DE VENTAS

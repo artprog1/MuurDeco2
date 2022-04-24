@@ -7,17 +7,43 @@
   <!-- Dashboards -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script>
+
+<?php
+// $result = mysqli_query($conn, $sql);
+
+// echo $data['total'];
+
+
+$Ventas = $dataVentas['total'];
+$Logisitca = $dataLogistica['total'];
+$Diseno = $dataDiseno['total'];
+$Produccion = $dataProduccion['total'];
+$Direccion = $dataDireccion['total'];
+// COUNT(*)
+// SELECT COUNT(*) FROM tblProyectos WHERE departamentoAsignado = 103;   Ventas
+// SELECT COUNT(*) FROM tblProyectos WHERE departamentoAsignado = 106;   Logisitca
+// SELECT COUNT(*) FROM tblProyectos WHERE departamentoAsignado = 107;   Diseno
+// SELECT COUNT(*) FROM tblProyectos WHERE departamentoAsignado = 108;   Produccion
+// SELECT COUNT(*) FROM tblProyectos WHERE departamentoAsignado = 109;   Direccion
+
+ ?>
+  var ventas = <?php echo json_encode($Ventas); ?>;
+  var logs = <?php echo json_encode($Logisitca); ?>;
+  var disno = <?php echo json_encode($Diseno); ?>;
+  var prod = <?php echo json_encode($Produccion); ?>;
+  var direccion = <?php echo json_encode($Direccion); ?>;
+
   const ctx = document.getElementById('myChart').getContext('2d');
   const myChart = new Chart(ctx, {
       type: 'bar',
       data: {
-          labels: ['Finanzas', 'Ventas', 'Logistica', 'Diseño', 'Producción', 'Dirección'],
+          labels: ['Ventas', 'Logistica', 'Diseño', 'Producción', 'Dirección'],
           datasets: [{
               label: 'Cantidad: ',
-              data: [12, 19, 3, 5, 2, 3],
+              data: [ventas, logs, disno, prod, direccion],
               backgroundColor: [
                   'rgba(255, 99, 132, 0.2)',
-                  'rgba(54, 162, 235, 0.2)',
+
                   'rgba(255, 206, 86, 0.2)',
                   'rgba(75, 192, 192, 0.2)',
                   'rgba(153, 102, 255, 0.2)',
@@ -25,7 +51,7 @@
               ],
               borderColor: [
                   'rgba(255, 99, 132, 1)',
-                  'rgba(54, 162, 235, 1)',
+
                   'rgba(255, 206, 86, 1)',
                   'rgba(75, 192, 192, 1)',
                   'rgba(153, 102, 255, 1)',

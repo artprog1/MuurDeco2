@@ -78,7 +78,7 @@ include_once '../header.php';
                            <select class="custom-select" name="departamentoAsignado" placeholder="Departamento">
                              <option value="<?php echo $departamentoAsignado?>"><?php echo $depaOriginal ?></option>
                              <?php
-                                $sqlm = mysqli_query($conn, "SELECT * FROM tblDepartamentos");
+                                $sqlm = mysqli_query($conn, "SELECT * FROM tblDepartamentos WHERE idDepartamento = 103 OR idDepartamento = 106 OR idDepartamento = 107 OR idDepartamento = 108 OR idDepartamento = 109  ;");
                                 while ($row1 = $sqlm->fetch_assoc()){
                                 // $value =   $row1['idDepartamento']
                                 echo "<option value='".$row1['idDepartamento']."'>". $row1['nombre']."</option>";
