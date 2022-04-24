@@ -22,6 +22,12 @@ include_once '../header.php';
     }
 ?>
 
+<head>
+  <script defer src="FEValidationPersonalEdit.js"></script>
+  <!-- <script defer src="js/FEValidationProyectos.js"></script> -->
+</head>
+
+
 
 
 
@@ -56,36 +62,36 @@ include_once '../header.php';
 
 
 
-              <form class="modal-content animate" id="signupform" action="update.php?ID=<?php echo $UserID; ?>" method="post"s style="padding: 12px 20px; margin: 8px 0;">
+              <form class="modal-content animate" id="formPersonal2" action="update.php?ID=<?php echo $UserID; ?>" method="post"s style="padding: 12px 20px; margin: 8px 0;">
 
                   <h2>Edición del Personal</h2>
 
                     <div class="form-row">
                         <div class="form-group col-md-4 col-sm-6">
                           <label for="nombre">Primer Nombre</label>
-                          <input type="text"  class="form-control" name="nombre" placeholder=" Primer Nombre" value="<?php echo $nombreUsuario; ?>" />
+                          <input type="text"  id="primernombre2" class="form-control" name="nombre" placeholder=" Primer Nombre" value="<?php echo $nombreUsuario; ?>" />
                        </div>
                        <div class="form-group col-md-4 col-sm-6">
                          <label for="nombre">Apellido Paterno</label>
-                         <input type="text"  class="form-control" name="paterno" placeholder=" A. Paterno " value="<?php echo $aPaternoUsuario; ?>" />
+                         <input type="text"  id="paterno2" class="form-control" name="paterno" placeholder=" A. Paterno " value="<?php echo $aPaternoUsuario; ?>" />
                        </div>
                        <div class="form-group col-md-4 col-sm-6">
                          <label for="nombre">Apellido Materno</label>
-                         <input type="text"  class="form-control" name="materno" placeholder=" A. Materno " value="<?php echo $aMaternoUsuario; ?>" />
+                         <input type="text"  id="materno2" class="form-control" name="materno" placeholder=" A. Materno " value="<?php echo $aMaternoUsuario; ?>" />
                        </div>
                      </div>
                      <div class="form-row">
                        <div class="form-group col-sm-6 col-md-6">
                          <label for="id">Correo Electronico</label>
-                         <input type="email"  class="form-control" name="email" placeholder="Correo@Electronico.com" value="<?php echo $correoUsuario; ?>" />
+                         <input type="email"  id="correo2" class="form-control" name="email" placeholder="Correo@Electronico.com" value="<?php echo $correoUsuario; ?>" />
                        </div>
                        <div class="form-group col-sm-6 col-md-6">
                          <label for="uid">ID de Usuario</label>
-                         <input type="text"  class="form-control" name="uid" placeholder="Id_Usario" value="<?php echo $usersUid; ?>" />
+                         <input type="text"  id="uid2" class="form-control" name="uid" placeholder="Id_Usario" value="<?php echo $usersUid; ?>" />
                        </div>
                        <div class="form-group col-md-6 col-sm-6">
                          <label for="telefono">Telefono</label>
-                         <input type="text"  class="form-control" name="telefono" placeholder="3311225566" value="<?php echo $telefonoUsuario; ?>" />
+                         <input type="text" id="telefono2" maxlength="10" pattern="\d{10}" class="form-control" name="telefono" placeholder="3311225566" value="<?php echo $telefonoUsuario; ?>" />
                        </div>
 
                        <!-- GENERAR EL QUERY DE LOS DEPTS -->
@@ -155,6 +161,10 @@ include_once '../header.php';
                       } ?>
                     </div>
 
+                    <div class="form-row col 2">
+                      <div id="errorPersonal2">
+                      </div>
+                    </div>
 
                     <div class="row" >
 

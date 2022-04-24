@@ -16,7 +16,30 @@ INNER JOIN tblDepartamentos ON tblProyectos.departamentoAsignado=tblDepartamento
 INNER JOIN tblClientes ON tblProyectos.idCliente2 = tblClientes.idCliente;";
   $result = mysqli_query($conn, $sql);
 
+
+  $sqlVentas = "SELECT COUNT(*) AS total FROM tblProyectos WHERE departamentoAsignado = 103;";
+  $resultVentas = mysqli_query($conn, $sqlVentas);
+  $dataVentas = mysqli_fetch_assoc($resultVentas);
+
+  $sqlLogistica = "SELECT COUNT(*) AS total FROM tblProyectos WHERE departamentoAsignado = 106;";
+  $resultLogistica = mysqli_query($conn, $sqlLogistica);
+  $dataLogistica = mysqli_fetch_assoc($resultLogistica);
+
+  $sqlDiseno = "SELECT COUNT(*) AS total FROM tblProyectos WHERE departamentoAsignado = 107;";
+  $resultDiseno = mysqli_query($conn, $sqlDiseno);
+  $dataDiseno = mysqli_fetch_assoc($resultDiseno);
+
+  $sqlProduccion = "SELECT COUNT(*) AS total FROM tblProyectos WHERE departamentoAsignado = 108;";
+  $resultProduccion = mysqli_query($conn, $sqlProduccion);
+  $dataProduccion = mysqli_fetch_assoc($resultProduccion);
+
+  $sqlDireccion = "SELECT COUNT(*) AS total FROM tblProyectos WHERE departamentoAsignado = 109;";
+  $resultDireccion = mysqli_query($conn, $sqlDireccion);
+  $dataDireccion = mysqli_fetch_assoc($resultDireccion);
+
 ?>
+
+
 
 <br><br>
 <div class="container-fluid">
@@ -73,6 +96,7 @@ INNER JOIN tblClientes ON tblProyectos.idCliente2 = tblClientes.idCliente;";
         <div class="modal-content animate">
           <canvas id="myChart" width="50%" height="50%"></canvas>
         </div>
+
 
         <div class="modal-content animate">
 

@@ -34,6 +34,13 @@ require_once 'includes/dbh.inc.php';
 
  ?>
 
+ <head>
+   <script defer src="js/FEValidationProyectos.js"></script>
+
+   <script defer src="js/FEValidation.js"></script>
+
+ </head>
+
  <br><br>
  <div class="container-fluid">
    <div class="row">
@@ -108,7 +115,32 @@ require_once 'includes/dbh.inc.php';
 
     </div>
 
-
+    <div class="alert">
+      <?php
+      if (isset($_GET["error"])) {
+        ?>
+      <!-- <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> -->
+        <?php
+      }
+      if (isset($_GET["error"])) {
+        if ($_GET["error"] == "emptyinput") {
+            echo "<p class='font-weight-light'>Asegure de llenar todos los campos</p>";
+        }
+        else if ($_GET["error"] == "invaliduid") {
+            echo "<p>ID Usuario invalido, favor de llenar con requisitos</p>";
+        }
+        else if ($_GET["error"] == "invalidemail") {
+            echo "<p class='font-weight-light'>Correo ya existe, favor de ingresa otro</p>";
+        }
+        else if ($_GET["error"] == "usernametaken") {
+            echo "<p class='font-weight-light'>ID de Usuario ya existe, favor de ingresa otro</p>";
+        }
+        // else if ($_GET["error"] == "none") {
+        //     echo "<p class='font-weight-light'>Usuario se dio de alta satisfactoriamente</p>";
+        // }
+      }
+      ?>
+    </div>
 
 <h2 class="sub-header"><br>Proyectos Registrados</h2>
 <div class="modal-content animate" style="width: 93%">

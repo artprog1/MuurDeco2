@@ -1,9 +1,10 @@
 <?php
 
-if (isset($_POST["submit"])) {
+if (isset($_POST["submit1"])) {
 
   $proyecto = $_POST["proyecto"];
   $description = $_POST["description"];
+  // $description = $_POST["description"];
   // PDF NO APLICA AHORITA
   $statusProyecto = $_POST["statusProyecto"];
   $departamentoAsg = $_POST["departamentoAsignado"];
@@ -23,20 +24,14 @@ require_once 'altaProyectsFNS.inc.php';
 
 // Checamos si hay bloques en blanco
 $statusProyecto = $_POST["statusProyecto"];
+
+
 if (emptyInputSignup($proyecto, $description, $statusProyecto, $departamentoAsg, $statusfactura) !== false) {
-  // header("location: ../$urlLink?error=emptyinput");
-    // exit();
-    echo "string" .$proyecto. $description. $statusProyecto.$departamentoAsg.$statusfactura;
+  header("location: ../$urlLink?error=emptyinput");
+  exit();
+
 }
 
-
-// Verificamos si el nombre del usuario ya existe
-// if (uidExists($conn, $username, $email, $tableInUse) !== false) {
-  // header("location: ../$urlLink?error=usernametaken");
-  // exit();
-// }
-
-//Contrasena debe de ser mas fuerte
 
 createUser($conn, $proyecto, $description, $statusProyecto, $departamentoAsg, $statusfactura, $idCliente, $comentarios, $tableInUse, $urlLink);
 

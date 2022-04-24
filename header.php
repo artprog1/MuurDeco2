@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="../../dist/css/bootstrap.min.css">
     <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
     <link href="dashboard.css" rel="stylesheet">
+
 <!-- Incluimos el archivo de CSS a utilizar con un path completo -->
     <!-- <link rel="stylesheet" href="css/reset.css" /> -->
     <!-- <link rel="stylesheet" href="css/style0.css"> -->
@@ -37,12 +38,12 @@
       </button>
       <!-- La lista de abajo son los modulos que se van a crear -->
       <div  class="collapse navbar-collapse" id="navbarTogglerDemo01">
-        <a class="navbar-brand" href="index.php">MuurDeco's WorkShop</a>
+        <a class="navbar-brand" href="index.php">MuurDeco's WorkShop <h6><?php echo $_SESSION["nombreUsuario"]; ?></h6></a>
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
           <?php
           // FOLDER DEPENDE DEL SERVIDOR
-          // $folder = "http://localhost:8888/MuurDecoShop2/";
-          $folder = "https://muurdeco.online/";
+          $folder = "http://localhost:8888/MuurDecoShop2/";
+          // $folder = "https://muurdeco.online/";
           if (isset($_SESSION["useruid"]) && $_SESSION["departamento"] == 104 || $_SESSION["departamento"] == 105 ) {
           // if (isset$_SESSION["useruid"]) && $_SESSION["departamento"] == 104) {
             require_once 'includes/caducarSesion.php';

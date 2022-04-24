@@ -26,13 +26,6 @@ if (emptyInputSignup($name, $paterno, $materno, $email, $username, $telefono, $p
   exit();
 }
 
-// No se captura para este formulario
-// if (invalidUid( $username) !== false) {
-//   header("location: ../$urlLink?error=invaliduid");
-//   exit();
-// }
-
-
 if (invalidName($name, $paterno, $materno) !== false ) {
   header("location: ../$urlLink?error=invalidNames");
   exit();

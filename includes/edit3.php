@@ -21,19 +21,19 @@ include_once '../header.php';
             <div class="modalss" id="id40" style="">
               <div id="id40" class="modal-dialog modal-dialog-centered modal-xl" style="">
 
-                <form class="modal-content animate" id="signupform" action="updateInventario.php?ID=<?php echo $IDInsumo; ?>" method="post" style="padding: 12px 20px; margin: 8px 0;">
+                <form class="modal-content animate" id="signupformProducto" action="updateInventario.php?ID=<?php echo $IDInsumo; ?>" method="post" style="padding: 12px 20px; margin: 8px 0;">
                   <h1>Ingresar Producto</h1>
                       <div class="form-row">
                           <div class="form-group col-md-6">
                             <label for="articulo">Articulo</label>
-                            <input type="text"  value="<?php echo $nombre; ?>" class="form-control" name="articulo" placeholder="Pintura Jalisco SA. de CV."/>
+                            <input type="text"  value="<?php echo $nombre; ?>" class="form-control" name="articulo" placeholder="Pintura Jalisco SA. de CV." id="producto"/>
                          </div>
 
 
                              <div class="form-group col-md-6">
                                <label for="costo">Costo</label>
                                <!-- <input type="text"  class="form-control" name="costo" placeholder="Pintura Jalisco SA. de CV."/> -->
-                               <input class="form-control" value="<?php echo $costo; ?>" name="costo" type="number" placeholder="$XX.XX" min="1" step="any" />
+                               <input class="form-control" value="<?php echo $costo; ?>" name="costo" type="number" placeholder="$XX.XX" min="1" step="any" id="costo"/>
 
                             </div>
 
@@ -41,7 +41,7 @@ include_once '../header.php';
                     <div class="form-row">
                          <div class="form-group col-md-6">
                            <label for="tipoArticulo">Tipo de Articulo</label>
-                           <input type="text"  value="<?php echo $tipo; ?>" class="form-control" name="tipoArticulo" placeholder="Madera, Vidreo, etc. " id="primernombre" />
+                           <input type="text"  value="<?php echo $tipo; ?>" class="form-control" name="tipoArticulo" placeholder="Madera, Vidreo, etc. " id="tipoProducto" />
                          </div>
 
                          <div class="form-group col-md-6">
@@ -49,6 +49,11 @@ include_once '../header.php';
                            <select class="custom-select"  name="provedor">
                              <!-- <option value="Pendiente" >Seleccione Area</option> -->
                              <option value="<?php echo $idProvedor ?>">Seleccione Area</option>
+
+                             <div class="form-row col 2">
+                               <div id="errorProducto">
+                               </div>
+                             </div>
 
                              <?php
                                 $sqlm = mysqli_query($conn, "SELECT * FROM tblProvedores");
@@ -104,6 +109,10 @@ include_once '../header.php';
                 </form>
               </div>
             </div>
+
+            <head>
+              <script defer src="FEValidationProductoEdit.js"></script>
+            </head>
 
             <script>
               function clicked(e)

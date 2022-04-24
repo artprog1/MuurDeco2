@@ -26,6 +26,9 @@ $conn = mysqli_connect($serverName, $dBUserName, $dBPassword, $dBName );
   $result = mysqli_query($conn, $sql);
 
 ?>
+<head>
+  <script defer src="js/FEValidationProvedor.js"></script>
+</head>
 
 <div class="">
   <?php

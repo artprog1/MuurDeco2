@@ -1,0 +1,23 @@
+{
+  "name": "muurdecoshop2",
+  "version": "1.0.0",
+  "description": "Proyecto relacionado con Node Js",
+  "main": "codigo.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+    "tareas": "codigo.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/artprog1/MuurDeco2.git"
+  },
+  "author": "Arturo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/artprog1/MuurDeco2/issues"
+  },
+  "homepage": "https://github.com/artprog1/MuurDeco2#readme",
+  "dependencies": {
+    "jquery": "^3.6.0"
+  }
+}

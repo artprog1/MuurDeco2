@@ -6,7 +6,8 @@
 
 function emptyInputSignup($proyecto, $description, $statusProyecto, $departamentoAsg, $statusfactura) {
   $result;
-  if (empty($proyecto) || empty($description) || empty($statusProyecto) || empty($departamentoAsg) || empty($statusfactura)) {
+  if ( empty($proyecto) || empty($description) || empty($statusProyecto) || empty($departamentoAsg) || empty($statusfactura) )
+  {
     $result = true;
   }
   else {

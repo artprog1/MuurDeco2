@@ -30,6 +30,10 @@ $conn = mysqli_connect($serverName, $dBUserName, $dBPassword, $dBName );
 
 ?>
 
+<head>
+  <script defer src="js/FEValidationProducto.js"></script>
+</head>
+
 <br><br>
 <div class="container-fluid">
   <div class="row">
