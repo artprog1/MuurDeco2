@@ -29,7 +29,7 @@
             <!-- <span class="border border-dark"></span> -->
               <div class="form-group">
                 <label for="uid">Usuario</label>
-                <input type="text" name="uid" class="form-control" placeholder="Correo Electronico / ID Usuario...">
+                <input type="text" name="uid" class="form-control" placeholder="ID Usuario">
 
               </div>
 

@@ -34,7 +34,7 @@ WHERE departamentoAsignado = 107;";
   <div class="row">
     <div class="col-sm-3 col-md-2 col-lg-2 sidebar ">
       <ul class="nav nav-sidebar list-group-flush">
-        <li class="list-group-item" style="width: 100%">Se requiere que los diseñadores puedan integrar sus avances semanalmente<span class="sr-only">(current)</span></li>
+        <li class="list-group-item" style="width: 100%">Panorama de todos los proyectos que requieren un diseño exclusivo por el departamento.  <span class="sr-only">(current)</span></li>
         <!-- <li class="list-group-item" style="width: 100%">Proyectos Completados</li> -->
       </ul>
 
@@ -63,7 +63,7 @@ WHERE departamentoAsignado = 107;";
                        <th scope="col">Departamento Asignado</th>
                        <!-- <th scope="col">Perfil</th> -->
                        <th scope="col">Cliente</th>
-                       <th scope="col">PDF</th>
+                       <!-- <th scope="col">PDF</th> -->
                      </tr>
                  </thead>
                  <tbody>
@@ -74,7 +74,7 @@ WHERE departamentoAsignado = 107;";
                            $estatusDelProyecto = $row['estatusDelProyecto'];
                            $Departamento =  $row['nombre'];
                            $Cliente =  $row['nombreCliente']. " ".$row['aPaternoCliente']." ". $row['aMaternoCliente'];
-                           $Pdf = $row['pdf'];
+                           // $Pdf = $row['pdf'];
                            // $UserPerfil = $row['correoUsuario'];
                        ?>
                        <tr>
@@ -83,7 +83,7 @@ WHERE departamentoAsignado = 107;";
                          <td><?php echo $estatusDelProyecto?></td>
                          <td><?php echo $Departamento?></td>
                          <td><?php echo $Cliente?></td>
-                         <td><?php echo $Pdf?></td>
+                         <!-- <td><?php echo $Pdf?></td> -->
                        </tr>
                        <?php } ?>
                   </tbody>

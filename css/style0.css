@@ -1,12 +1,9 @@
-body{
-
-/*  */
-
+.error
+{
+  color: red;
+  size: 80%
 }
-
-.center123 {
-  margin: auto;
-  width: 80%;
-  /* border: 3px solid green; */
-  padding: 10px;
+.hidden
+{
+  display:none
 }

@@ -238,8 +238,10 @@
                  </div>
                  <div class="form-group col-md-6 col-sm-6">
                    <label for="telefono">Telefono</label>
-                   <input type="text"  class="form-control" name="telefono" placeholder="3311225566" id="telefono1" />
+                   <!-- numeronumero -->
+                   <input type="text"  pattern="\d{10}" title="Favor de manter 10 digitos numericos" maxlength="10" class="form-control" name="telefono" placeholder="3311225566" id="telefono1" />
                  </div>
+
 
                  <!-- GENERAR EL QUERY DE LOS DEPTS -->
                  <div class="form-group col-sm-6 col-md-6">

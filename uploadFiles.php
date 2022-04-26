@@ -55,13 +55,14 @@ WHERE departamentoAsignado = 107;";
         <h2 class="sub-header"><br>Proyectos bajo Diseño</h2>
 
     <div class="container">
-      <form action="includes/upload.php" method="post" enctype="multipart/form-data">
+      <form action="includes/uploads.php" method="post" enctype="multipart/form-data">
       <div class="row">
         <legend>Select File to Upload:</legend>
       </div>
     <div class="row">
       <div class="form-group">
         <input type="file" name="file1" />
+        <!-- <input type="file" name="file1" /> -->
       </div>
       <div class="form-group">
         <input type="submit" name="submit" value="Upload" class="btn btn-info"/>

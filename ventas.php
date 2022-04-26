@@ -151,7 +151,7 @@ require_once 'includes/dbh.inc.php';
              <th scope="col">ID Proyecto </th>
              <th scope="col">Titulo</th>
              <th scope="col">Descripción</th>
-             <th scope="col">PDF</th>
+             <!-- <th scope="col">PDF</th> -->
              <!-- <th scope="col">Perfil</th> -->
              <th scope="col">Estatus del Proyecto</th>
              <th scope="col">Modificar</th>
@@ -177,7 +177,7 @@ require_once 'includes/dbh.inc.php';
                <th scope="row"><?php echo $idProyecto?></th>
                <td><?php echo $nombreProyecto ?></td>
                <td><?php echo $descripcion ?></td>
-               <td><?php echo $pdf ?></td>
+               <!-- <td><?php echo $pdf ?></td> -->
                <td><?php echo $estatusDelProyecto ?></td>
                <td> <a href="includes/edit7.php?GetID=<?php echo $idProyecto?>">Modificar</a> </td>
 
