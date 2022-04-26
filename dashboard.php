@@ -93,10 +93,17 @@ INNER JOIN tblClientes ON tblProyectos.idCliente2 = tblClientes.idCliente;";
 
         <h2 class="sub-header"><br>Proyectos Activos</h2>
 
-        <div class="modal-content animate">
-          <canvas id="myChart" width="50%" height="50%"></canvas>
+
+        <div class="table" >
+          <div class="modal-content animate" >
+            <canvas id="myChart" ></canvas>
+          </div>
         </div>
 
+
+        <div class="">
+          <h2>Panorama General de Proyectos</h2>
+        </div>
 
         <div class="modal-content animate">
 

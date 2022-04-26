@@ -14,12 +14,22 @@
 
     <meta name="description">
     <link rel="canonical" href="https://getbootstrap.com/docs/3.4/examples/dashboard/">
+
+
+
+
+
     <title>Muur Deco Shop</title>
     <!-- INCLUIMOS BOOTSTRAP -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="../../dist/css/bootstrap.min.css">
     <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
     <link href="dashboard.css" rel="stylesheet">
+
+
+    <link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css"/>
+
+
 
 <!-- Incluimos el archivo de CSS a utilizar con un path completo -->
     <!-- <link rel="stylesheet" href="css/reset.css" /> -->
@@ -42,14 +52,14 @@
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
           <?php
           // FOLDER DEPENDE DEL SERVIDOR
-          $folder = "http://localhost:8888/MuurDecoShop2/";
-          // $folder = "https://muurdeco.online/";
+          // $folder = "http://localhost:8888/MuurDecoShop2/";
+          $folder = "https://muurdeco.online/";
           if (isset($_SESSION["useruid"]) && $_SESSION["departamento"] == 104 || $_SESSION["departamento"] == 105 ) {
           // if (isset$_SESSION["useruid"]) && $_SESSION["departamento"] == 104) {
             require_once 'includes/caducarSesion.php';
             echo "<li class='nav-item'> <a class='nav-link' href='".$folder."dashboard.php'>Tablero <span class='sr-only'>(current)</span></a> </li>";
-            echo "<li class='nav-item'> <a class='nav-link' href='".$folder."ventas.php'>Ventas </a> </li>";
             echo "<li class='nav-item'> <a class='nav-link' href='".$folder."administracion.php'>Administración </a> </li>";
+            echo "<li class='nav-item'> <a class='nav-link' href='".$folder."ventas.php'>Ventas </a> </li>";
             echo "<li class='nav-item'> <a class='nav-link' href='".$folder."diseno.php'>Diseño </a> </li>";
             echo "<li class='nav-item'> <a class='nav-link' href='".$folder."produccion.php'>Producción</a> </li>";
             echo "<li class='nav-item'> <a class='nav-link' href='".$folder."direccion.php'>Dirección de Proyectos </a> </li>";

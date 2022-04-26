@@ -62,7 +62,7 @@ WHERE departamentoAsignado = 108;";
                        <!-- <th scope="col">Perfil</th> -->
                        <th scope="col">Cliente</th>
                        <th scope="col">Comentarios</th>
-                       <th scope="col">PDF</th>
+                       <!-- <th scope="col">PDF</th> -->
                      </tr>
                  </thead>
                  <tbody>
@@ -86,7 +86,7 @@ WHERE departamentoAsignado = 108;";
                          <td><?php echo $Descripcion?></td>
                          <td><?php echo $Cliente?></td>
                          <td><?php echo $Comentarios?></td>
-                         <td><?php echo $Pdf?></td>
+                         <!-- <td><?php echo $Pdf?></td> -->
                        </tr>
                        <?php } ?>
                   </tbody>

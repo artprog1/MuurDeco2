@@ -69,13 +69,8 @@ require_once 'includes/dbh.inc.php';
           </div>
 
 <h2 class="sub-header"><br>Personal de MuurDeco</h2>
-
-
-
-
-  <div class="modal-content animate" style="width: 93%">
-
-           <table class="table table-striped table-hover table-bordered table-responsive-lg table-responsive-sm table-responsive-md">
+    <div class="modal-content animate" style="width: 93%">
+           <table id="" class="table table-striped table-hover table-bordered table-responsive-lg table-responsive-sm table-responsive-md">
              <thead>
                <tr>
                  <th scope="col">ID </th>
@@ -110,8 +105,12 @@ require_once 'includes/dbh.inc.php';
                  ?>
             </tbody>
            </table>
+          <!-- </div> -->
+         <!-- </div> -->
       </div>
       </div>
       </div>
+
+
 
  <?php include_once 'footer.php';?>

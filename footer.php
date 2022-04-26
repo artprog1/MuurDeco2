@@ -4,9 +4,12 @@
 
 </script>
 
+<script type="text/javascript" src="DataTables/datatables.min.js"></script>
+
   <!-- Dashboards -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script>
+
 
 <?php
 // $result = mysqli_query($conn, $sql);
